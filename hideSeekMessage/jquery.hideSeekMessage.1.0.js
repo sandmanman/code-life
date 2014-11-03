@@ -80,7 +80,7 @@ var isPad = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null;
 
         //计算top,left 值
         function _calculate() {
-            _width = $("#hideseek-message-content").width(); //计算tip宽度
+            _width = $("#hideseek-message-content").width() + 86; //计算tip宽度
             if ($doc.scrollTop() + $win.height() > $doc.height()) {
                 _newTop = $doc.height() - $win.height() / 2 - 40;
             } else {
