@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>hideSeekMessage</title>
-	<link rel="stylesheet" type="text/css" href="hide-seek-message.css" />
+	<title>hideSeekTip</title>
+	<link rel="stylesheet" type="text/css" href="hide-seek-tip.css" />
 	<script type="text/javascript" src="../common/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="jquery.hideSeekMessage.1.0.js"></script>
+	<script type="text/javascript" src="jquery.hideSeekTip.1.0.js"></script>
 </head>
 <body>
 	<button type="button" class="normal-msg">普通</button>
@@ -18,23 +18,23 @@
 	$(document).ready(function(){
 		//普通 常态
 		$(".normal-msg").click(function(){
-			$.hideSeekMessage("普通常态提示",1,3000);
+			$.hideSeekTip("普通常态提示",1,3000);
 		});
 		//成功提示
 		$(".suss-msg").click(function(){
-			$.hideSeekMessage("成功提示",2,300000);
+			$.hideSeekTip("成功提示",2,300000);
 		});
 		//失败提示
 		$(".fail-msg").click(function(){
-			$.hideSeekMessage("失败提示",3,3000);
+			$.hideSeekTip("失败提示",3,3000);
 		});
 		//警告提示
 		$(".wraning-msg").click(function(){
-			$.hideSeekMessage("警告提示",4,3000);
+			$.hideSeekTip("警告提示",4,3000);
 		});
 		//回调
 		$(".callback-msg").click(function(){
-			$.hideSeekMessage("等回调",1,1000,1,function(){
+			$.hideSeekTip("等回调",1,1000,1,function(){
 				alert("还能回调");
 			});
 		});
