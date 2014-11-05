@@ -1,22 +1,71 @@
 .hide-seek-tip{
-	position: absolute;
 	text-align: center;
-	border: 1px solid #fff;border-radius: 6px;
+	border: 1px solid #ccc;border-radius: 6px;
 	background: #fff;
 	box-shadow: 0 1px 70px rgba(0, 0, 0, 0.5);
 }
 .hideseek-tip-container{
-	padding: 10px;
+	padding: 10px 20px;
 	font-weight: 700;font-size: 16px;
 }
 .msg-icon-normal,
 .msg-icon-success,
-.msg-icon-fail,
+.msg-icon-error,
 .msg-icon-wraning{
 	display: block;width: 44px;height: 44px;overflow: hidden;margin: 0 auto 10px auto;
 	background-image: url(hide-seek-tip.png);background-repeat: no-repeat;
 }
 .msg-icon-normal{background-position: 0 0;}
 .msg-icon-success{background-position: 0 -44px;}
-.msg-icon-fail{background-position: 0 -88px;}
+.msg-icon-error{background-position: 0 -88px;}
 .msg-icon-wraning{background-position: 0 -132px;}
+
+/* 动画 */
+@-webkit-keyframes bounceIn {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7); }
+  45% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05); }
+  80% {
+    transform: scale(0.95);
+    -webkit-tranform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } 
+}
+@-moz-keyframes bounceIn {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7); }
+  45% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05); }
+  80% {
+    transform: scale(0.95);
+    -webkit-tranform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } 
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7); }
+  45% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05); }
+  80% {
+    transform: scale(0.95);
+    -webkit-tranform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } 
+}
+
+.bounceIn {
+  -webkit-animation: bounceIn 0.3s;
+     -moz-animation: bounceIn 0.3s;
+          animation: bounceIn 0.3s; 
+}
