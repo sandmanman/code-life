@@ -5,7 +5,7 @@
 	box-shadow: 0 1px 70px rgba(0, 0, 0, 0.5);
 }
 .hideseek-tip-container{
-	padding: 10px 20px;
+	padding: 20px 30px;
 	font-weight: 700;font-size: 16px;
 }
 .msg-icon-normal,
@@ -19,6 +19,17 @@
 .msg-icon-success{background-position: 0 -44px;}
 .msg-icon-error{background-position: 0 -88px;}
 .msg-icon-wraning{background-position: 0 -132px;}
+
+.hide-seek-tip .close{
+  position: absolute;top: 3px;right: 3px;
+  width: 20px;height: 20px;overflow: hidden;
+  text-align: center;line-height: 20px;color: #999;font-size: 22px;font-weight: 400;font-family: Arial;
+  cursor: pointer;
+  border-radius: 1000px;
+}
+.hide-seek-tip .close:hover{
+  color: #dd0000;
+}
 
 /* 动画 */
 @-webkit-keyframes bounceIn {

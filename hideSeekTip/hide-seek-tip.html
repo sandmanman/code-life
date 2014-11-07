@@ -26,14 +26,15 @@
 			$.hideSeekTip({
 				message  : "成功提示",
 				iconType : "success",
-				delayTime: 60000
+				delayTime: 60000,
 			});
 		});
 		//错误提示
 		$(".fail-msg").click(function(){
 			$.hideSeekTip({
 				message  : "错误提示",
-				iconType : "error"
+				iconType : "error",
+				allowDismiss: true
 			});
 		});
 		//警告提示
