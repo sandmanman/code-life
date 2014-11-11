@@ -10,7 +10,7 @@
 <body style="height:2000px;">
 	<button type="button" class="normal-msg">普通</button>
 	<button type="button" class="suss-msg">成功</button>
-	<button type="button" class="fail-msg">错误</button>
+	<button type="button" class="error-msg">错误</button>
 	<button type="button" class="wraning-msg">警告</button>
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -25,16 +25,14 @@
 		$(".suss-msg").click(function(){
 			$.hideSeekTip({
 				message  : "成功提示",
-				iconType : "success",
-				delayTime: 60000,
+				iconType : "success"
 			});
 		});
 		//错误提示
-		$(".fail-msg").click(function(){
+		$(".error-msg").click(function(){
 			$.hideSeekTip({
 				message  : "错误提示",
-				iconType : "error",
-				allowDismiss: true
+				iconType : "error"
 			});
 		});
 		//警告提示

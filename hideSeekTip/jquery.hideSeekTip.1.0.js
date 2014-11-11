@@ -24,8 +24,6 @@ var isPad = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null;
 
         options = $.extend(true, {}, $.hideSeekTip.defaultOptions, options);
 
-        //options = $.extend(defaults, options);
-
         if (typeof hideSeekTipTimeout !== "number") {
             hideSeekTipTimeout = 0
         }
@@ -42,7 +40,6 @@ var isPad = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null;
         $hideSeekTip.addClass("bounceIn").css({
             zIndex  : options.zIndex
         });
-
         if ( browser.ie == 6 || browser.ie == 7 ) {
             $hideSeekTip.css({
                 position: "absolute" //ie6/7不支持fixed
@@ -72,10 +69,10 @@ var isPad = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null;
         //计算位置
         calculatePos();
         $hideSeekTip.css({
-            top   : modalTop,
-            left  : modalLeft
+            top: modalTop,
+            left: modalLeft
         });
-
+        
         //重置
         function reSetPos() {
             calculatePos(); //重新计算位置
@@ -97,10 +94,14 @@ var isPad = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null;
             });
         }
 
-        hideSeekTipTimeout = setTimeout(function() {
-            removeTip();
-        }, options.delayTime);
 
+        if (options.autoHide){
+            hideSeekTipTimeout = setTimeout(function() {
+                removeTip();
+            }, options.delayTime);  
+        }
+
+        
         //手动关闭
         $hideSeekTip.find(".close").click( removeTip );
 
@@ -110,6 +111,7 @@ var isPad = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null;
     $.hideSeekTip.defaultOptions = {
         width: "auto",
         message: "",
+        autoHide: true, //是否自动消失 默认自动消失
         delayTime: 2000,
         zIndex: 9999,
         iconType: "normal", //图标类型 普通 normal , 成功 success , 错误 error , 警告 warning
