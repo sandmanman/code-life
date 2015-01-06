@@ -11,14 +11,14 @@
 .msg-icon-normal,
 .msg-icon-success,
 .msg-icon-error,
-.msg-icon-wraning{
+.msg-icon-warning{
 	display: block;width: 44px;height: 44px;overflow: hidden;margin: 0 auto 10px auto;
 	background-image: url(hide-seek-tip.png);background-repeat: no-repeat;
 }
 .msg-icon-normal{background-position: 0 0;}
 .msg-icon-success{background-position: 0 -44px;}
 .msg-icon-error{background-position: 0 -88px;}
-.msg-icon-wraning{background-position: 0 -132px;}
+.msg-icon-warning{background-position: 0 -132px;}
 
 .hide-seek-tip .close{
   position: absolute;top: 3px;right: 3px;
