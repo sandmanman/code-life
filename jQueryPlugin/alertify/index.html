@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>alertify插件 代替浏览器原生alert</title>
+	<link rel="stylesheet" href="jquery.alertify.css" />
+	<meta name="viewport" content="width=device-width" />
+	<style type="text/css">
+	body{padding: 50px;}
+	h1{font-size: 26px;}
+	h2{font-size: 18px;}
+	</style>
+</head>
+<body>
+	<h1>alertify插件 代替浏览器原生alert</h1>
+	<h2>Dialogs</h2>
+	<a href="#" id="alert">Alert</a><br>
+	<a href="#" id="confirm">Confirm</a><br>
+	<a href="#" id="prompt">Prompt</a><br>
+	<a href="#" id="labels">自定义按钮文字</a><br>
+	<a href="#" id="focus">按钮选中</a><br>
+	<a href="#" id="order">按钮位置互换</a>
+
+	<h2>Logs 2.6s自动消失</h2>
+	<a href="#" id="notification">默认提示</a><br>
+	<a href="#" id="success">成功提示</a><br>
+	<a href="#" id="error">失败错误提示</a><br>
+	<a href="#" id="warning">警告提示</a><br>
+	<a href="#" id="delay">自定义时间延长10s</a><br>
+	<a href="#" id="forever">点击才消失</a>
+
+	<h2>plusTip 点了就知道</h2>
+	<a href="#" id="plustip1">plusTip1</a>
+	<a href="#" id="plustip2">plusTip2</a>
+
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.alertify.0.3.11.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		// ==============================
+		// Standard Dialogs
+		$("#alert").on( 'click', function () {
+			alertifyReset();
+			alertify.set({closeButtonShow:true});
+			alertify.alert("这是alert提示");
+			return false;
+		});
+
+		$("#confirm").on( 'click', function () {
+			alertifyReset();
+			alertify.confirm("这是confirm提示", function (e) {
+				if (e) {
+					alertify.success("你点了确定");
+				} else {
+					alertify.error("你点了取消");
+				}
+			});
+			return false;
+		});
+
+		$("#prompt").on( 'click', function () {
+			alertifyReset();
+			alertify.prompt("要修改吗，请填写", function (e, str) {
+				if (e) {
+					alertify.success("你点了确定，并修改为: " + str);
+				} else {
+					alertify.log("你点了取消");
+				}
+			}, "这是默认值");
+			return false;
+		});
+
+
+		// ==============================
+		// Standard Dialogs
+		$("#notification").on( 'click', function () {
+			alertifyReset();
+			alertify.log("默认提示");
+			return false;
+		});
+
+		$("#success").on( 'click', function () {
+			alertifyReset();
+			alertify.success("成功提示");
+			return false;
+		});
+
+		$("#error").on( 'click', function () {
+			alertifyReset();
+			alertify.error("失败错误提示");
+			return false;
+		});
+
+		$("#warning").on( 'click', function () {
+			alertifyReset();
+			alertify.warning("警告提示");
+			return false;
+		});
+
+		// ==============================
+		// Custom Properties
+		$("#delay").on( 'click', function () {
+			alertifyReset();
+			alertify.log("10s后消失", "", 10000);
+			return false;
+		});
+
+		$("#forever").on( 'click', function () {
+			alertifyReset();
+			alertify.log("点我就消失", "", 0);
+			return false;
+		});
+
+		$("#labels").on( 'click', function () {
+			alertifyReset();
+			alertify.set({
+				labels: {
+					ok: "同意",
+					cancel: "拒绝"
+				}
+			});
+			alertify.confirm("自定义按钮文字", function (e) {
+				if (e) {
+					alertify.success("你点了同意", 5000);
+				}
+			});
+			return false;
+		});
+
+		$("#focus").on( 'click', function () {
+			alertifyReset();
+			alertify.set({ buttonFocus: "ok" });
+			alertify.confirm("按钮选中，这里定义 选中取消按钮", function (e) {
+				if (e) {
+					alertify.success("你点了确定");
+				} else {
+					alertify.set({
+						labels: {
+							ok: "知道了"
+						}
+					});
+					alertify.alert("尽管模拟账户试图复制真实的市场情景，惟它们乃以模拟市况为基础。因此，它与真实账户之间存在主要差异；包括(但不限于)缺乏实时市场流通量作为依据及可能提供在真实账户中未必可买卖的部份产品。在模拟环境下执行指令的操作能力可能会导致交易异常加速、并无被拒的指令，及/或并无滑点。在某些情况下，由于模拟账户的更新未必会与真实账户的更新同步进行，因此保证金要求可能会与真实账户的保证金要求有所不同。");
+				}
+			});
+			return false;
+		});
+
+		$("#order").on( 'click', function () {
+			alertifyReset();
+			alertify.set({ buttonReverse: true });
+			alertify.confirm("按钮位置互换，默认确认在后，这里自定义为取消在后", function (e) {
+				if (e) {
+					alertify.success("你点了确定");
+				} else {
+					alertify.error("你点了取消");
+				}
+			});
+			return false;
+		});
+
+
+		//follow plus tip
+		$("#plustip1").on( 'click', function () {
+			alertifyReset();
+			alertify.plusTip(this,"积分 +10086",10000);
+			return false;
+		});
+		$("#plustip2").on( 'click', function () {
+			alertifyReset();
+			alertify.plusTip(this,"积分 再加 +10086");
+			return false;
+		});
+
+	});
+		
+	</script>
+
+</body>
+</html>

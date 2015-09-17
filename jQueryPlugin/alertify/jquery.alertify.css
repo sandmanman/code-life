@@ -1,0 +1,329 @@
+
+/* ====================================
+ * alertify CSS
+ * 02.13.2015修改
+ * ====================================
+*/
+
+.alertify,
+.alertify-show,
+.alertify-log {
+}
+.alertify-hide {
+}
+.alertify-log-hide {
+	-webkit-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-moz-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-ms-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-o-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+}
+.alertify-cover {
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+.alertify {
+	position: fixed;
+	z-index: 99999;
+	min-width: 400px;
+	max-width: 500px;
+	opacity: 1;
+	box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+}
+.alertify-hidden,
+.alertify-log-hide {
+	opacity: 0;
+	-webkit-transform: translate(0, -30px);
+	-moz-transform: translate(0, -30px);
+	-ms-transform: translate(0, -30px);
+	-o-transform: translate(0, -30px);
+	transform: translate(0, -30px);
+}
+.alertify-hidden,
+.alertify-logs-hidden,
+.alertify-plus-hidden,
+.alertify-cover-hidden {
+	display: none;
+}
+.alertify-logs {
+	position: fixed;
+	z-index: 5000;
+	min-width: 200px;
+	max-width: 300px;
+	text-align: center;
+	opacity: 1;
+}
+.alertify-log {
+	position: relative;
+}
+.alertify-log #close-alertify {
+	width: 22px;
+	height: 22px;
+	color: #999;
+	font-size: 16px;
+}
+.alertify-log-show {
+	top: 0;
+	opacity: 1;
+}
+.alertify-resetFocus {
+	display: none;
+}
+.alertify-inner {
+	text-align: center;
+}
+.alertify-prompt-input {
+	width: 100%;
+	font-size: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.alertify-button {
+	display: inline-block;
+	padding: 10px 35px;
+	margin: 0 5px;
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	-webkit-transition: background, box-shadow .3s;
+	-moz-transition: background, box-shadow .3s;
+	transition: background, box-shadow .3s;
+}
+
+/**
+* Default Look and Feel
+*/
+.alertify,
+.alertify-log {
+	background: #fff;
+	border-radius: 0 0 5px 5px;
+}
+.alertify:after,
+.alertify-log:after {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 5px 5px 0 0;
+	background-color: #2196f3;
+}
+.alertify-log:after {
+	width: 101%;
+	margin-left: -1px;
+}
+.alertify-log {
+	box-shadow: 0 0 60px rgba(0, 0, 0, .35);
+}
+.alertify-text-wrapper {
+	margin-top: -10px;
+	padding: 0 30px 20px 30px;
+	text-align: center;
+}
+.alertify-prompt-input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.alertify-prompt-input:focus {
+	border-color: #2196f3;
+}
+.alertify-button-ok {
+	color: #fff;
+	border: 1px solid #2196f3;
+	background-color: #2196f3;
+}
+.alertify-button-ok:hover {
+	background-color: #259bf9;
+}
+.alertify-button-cancel {
+	color: #666;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+.alertify-button-cancel:hover {
+	background-color: #f1f1f1;
+}
+.alertify-button-cancel:active {
+	background-color: #eee;
+}
+.alertify-button:hover {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+}
+.alertify-button:active,
+.alertify-button:focus {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+}
+.alertify-button-ok:active {
+	border: 1px solid #1385e0;
+	background-color: #1385e0;
+}
+.alertify-log {
+	padding: 15px;
+	font-size: 16px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.alertify-log:before {
+	content: '';
+	display: block;
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	margin: 0 auto 5px auto;
+	background-image: url(alert-icon-small.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.alertify-log-success:after {
+	background-color: #31ac45;
+}
+.alertify-log-success:before {
+	background-position: 0 -32px;
+}
+.alertify-log-error:after {
+	background-color: #ea1e3b;
+}
+.alertify-log-error:before {
+	background-position: 0 -64px;
+}
+.alertify-log-warning:after {
+	background-color: #ff9500;
+}
+.alertify-log-warning:before {
+	background-position: 0 bottom;
+}
+.alertify-plus .plus-log {
+	position: absolute;
+	padding: 4px 8px;
+	color: #fff;
+	background: #ff3b30;
+	border-radius: 2px;
+	opcity: 1;
+}
+.alertify-plus .plus-log .arrow {
+	position: absolute;
+	left: 5px;
+	bottom: -15px;
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-style: solid;
+	border-width: 10px 8px;
+	border-color: #ff3b30 transparent transparent;
+	        transform: rotate(15deg);
+	   -moz-transform: rotate(15deg);
+	-webkit-transform: rotate(15deg);
+}
+.alertify-message {
+	padding: 30px;
+	font-size: 16px;
+	text-align: center;
+}
+#alertify-form .alertify-message {
+	padding: 30px;
+}
+.alertify-buttons {
+	padding: 0 0 20px 0;
+	text-align: center;
+}
+#close-alertify {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	color: #888;
+	font-size: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+#close-alertify:hover {
+	color: #ea1e3b;
+}
+@media only screen and (max-width:680px) {
+	.alertify,
+	.alertify-logs {
+		width: 90%;
+		min-width: 90%;
+		max-width: 90%;
+	}
+	.alertify {
+		left: 5%;
+		margin: 0;
+	}
+}
+@media only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min--moz-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
+	.alertify-log:before {
+		background-image: url(alert-icon-small@2x.png);
+		background-size: 32px 128px;
+	}
+	.alertify-log:before {
+		background-position: 0 0;
+	}
+	.alertify-log-success:before {
+		background-position: 0 -32px;
+	}
+	.alertify-log-error:before {
+		background-position: 0 -64px;
+	}
+	.alertify-log-warning:before {
+		background-position: 0 bottom;
+	}
+}
+@-webkit-keyframes fadeOutUp {
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-25%);
+		transform: translateY(-25%);
+	}
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes fadeOutUp {
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-25%);
+		-ms-transform: translateY(-25%);
+		transform: translateY(-25%);
+	}
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+.animated {
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.fadeOutUp {
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp;
+}

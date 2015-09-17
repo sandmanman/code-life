@@ -1,0 +1,37 @@
+/*
+ * jquery.validate CSS
+ * 02.16.2015
+*/
+
+.validate-error,
+.validate-loading-error {
+	color: #ea1e3b;
+}
+.validate-error:before,
+.validate-loading-error:before {
+	content: '';
+	position: relative;
+	top: -1px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	margin-right: 5px;
+	vertical-align: text-bottom;
+	background: url(validation-icon.png) no-repeat;
+}
+.validate-error.checked:before {
+	background-position: 0 -16px;
+}
+.validate-error.checked {
+	color: #57a544;
+}
+
+.validate-loading {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	line-height: 9999px;
+	background: url(loading16.gif) no-repeat;
+}
