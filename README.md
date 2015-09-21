@@ -41,4 +41,6 @@ var redirect = function() {
 	}
 	window.location = 'http://3g.163.com/newsapp';
 };
+//调用
+redirect();
 ```
