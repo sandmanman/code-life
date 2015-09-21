@@ -1,6 +1,7 @@
-codeLife
-========
+#codeLife
+
 前端代码摘抄修改积累
+========
 
 ####移动端浏览器判断
 
@@ -14,31 +15,31 @@ var isAndroid = !isIDevice && (/android/gi).test(navigator.userAgent);
 var isIEMobile = !isIDevice && !isAndroid && (/IEMobile/gi).test(navigator.userAgent);
 				
 var redirect = function() {
-		if(isIDevice){
-				var msg = isIDeviceIpad ? "检测到您正在使用iPad, 是否直接前往AppStore下载?" : "检测到您正在使用iPhone, 是否直接前往AppStore下载?";
-				if (confirm(msg)){
-					window.location = "http://3g.163.com/links/3615";
-					return;
-				};
-				//if the device is ipad, break redirect.
-				if(isIDeviceIpad){
-					return;
-				}
-		}else if(isAndroid) {
-				if (confirm("检测到您正在使用Android 手机，是否直接下载程序安装包？")) {
-					window.location = 'http://3g.163.com/links/4304';
-					return;
-				}
-				//TODO if the device is android pad, break redirect
-				//
-		}else if(isIEMobile){
-			  //continue
-				window.location = 'http://3g.163.com/links/3614';
-				return;
-		} else {
-				//break
-				return;
+	if(isIDevice){
+		var msg = isIDeviceIpad ? "检测到您正在使用iPad, 是否直接前往AppStore下载?" : "检测到您正在使用iPhone, 是否直接前往AppStore下载?";
+		if (confirm(msg)){
+			window.location = "http://3g.163.com/links/3615";
+			return;
+		};
+		//if the device is ipad, break redirect.
+		if(isIDeviceIpad){
+			return;
 		}
-		window.location = 'http://3g.163.com/newsapp';
+	}else if(isAndroid) {
+		if (confirm("检测到您正在使用Android 手机，是否直接下载程序安装包？")) {
+			window.location = 'http://3g.163.com/links/4304';
+			return;
+		}
+		//TODO if the device is android pad, break redirect
+		//
+	}else if(isIEMobile){
+	  	//continue
+		window.location = 'http://3g.163.com/links/3614';
+		return;
+	} else {
+		//break
+		return;
+	}
+	window.location = 'http://3g.163.com/newsapp';
 };
 ```
