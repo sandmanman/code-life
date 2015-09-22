@@ -44,3 +44,10 @@ var redirect = function() {
 //调用
 redirect();
 ```
+
+####CSS Rem 使用
+```css
+html { font-size: 62.5%; } 
+body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
+h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
+```
