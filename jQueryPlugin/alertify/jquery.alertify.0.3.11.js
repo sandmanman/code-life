@@ -318,7 +318,7 @@
 						break;
 				}
 
-				elDialog.className = "alertify alertify-" + type + " " + css;
+				elDialog.className = "alertify animated zoomIn alertify-" + type + " " + css;
 				elCover.className = "alertify-cover";
 				return html;
 			},
@@ -349,7 +349,7 @@
 					self.unbind(this, self.transition.type, transitionDone);
 					// remove log message
 					elLog.removeChild(this);
-					if (!elLog.hasChildNodes()) elLog.className = "alertify-logs animated slideInUp";
+					if (!elLog.hasChildNodes()) elLog.className = "alertify-logs";
 				};
 				// this sets the hide class to transition out
 				// or removes the child if css transitions aren't supported
@@ -362,7 +362,7 @@
 							el.className += " alertify-log-hide";
 						} else {
 							elLog.removeChild(el);
-							if (!elLog.hasChildNodes()) elLog.className = "alertify-logs animated slideInUp";
+							if (!elLog.hasChildNodes()) elLog.className = "alertify-logs";
 						}
 					}
 				};
@@ -582,7 +582,7 @@
 				this.init();
 				check();
 
-				elLog.className = "alertify-logs animated slideInDown";
+				elLog.className = "alertify-logs";
 				this.notify(message, type, wait);
 				return this;
 			},
@@ -599,23 +599,23 @@
 			 * @return {undefined}
 			 */
 			notify: function(message, type, wait) {
-				//清除当前内容
-				jQuery(elLog).html("");
-				
+
+				//清除当前内容				
 				var log = document.createElement("div");
-				log.className = "alertify-log" + ((typeof type === "string" && type !== "") ? " alertify-log-" + type : "");
-				log.innerHTML = '<button id="close-alertify" type="button">×</button>'+message;
+				log.className = "alertify-log animated slideInDown" + ((typeof type === "string" && type !== "") ? " alertify-log-" + type : "");
+				log.innerHTML = "<div class=\"alertify-log-wrap\"><div class=\"alertify-log-content\"><i class=\"alertify-icon\"></i><button id=\"close-alertify\" type=\"button\">×</button>" + message + "</div></div>";
 				// append child
 				elLog.appendChild(log);
 				// triggers the CSS animation
-				setTimeout(function() {
-					log.className = log.className + " alertify-log-show";
-				}, 50);
+				// setTimeout(function() {
+				// 	log.className = log.className + " alertify-log-show";
+				// }, 50);
 				this.close(log, wait);
 
 				//调用位置计算
 				//_alertify.position();
 				//_alertify.resizePosition();
+
 			},
 
 			/**

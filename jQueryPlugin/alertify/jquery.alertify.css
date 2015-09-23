@@ -54,15 +54,10 @@
 }
 .alertify-logs {
 	position: fixed;
-	left: 50%;
 	top: 26px;
-	z-index: 9999;
 	width: 100%;
-	text-align: center;
+	z-index: 9999;
 	opacity: 1;
-}
-.alertify-log {
-	position: relative;
 }
 .alertify-log-show {
 	top: 0;
@@ -100,13 +95,9 @@
 /**
 * Default Look and Feel
 */
-.alertify,
-.alertify-log {
+.alertify{
 	background: #fff;
 	border-radius: 6px;
-}
-.alertify-log {
-	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 .alertify-text-wrapper {
 	margin-top: -10px;
@@ -133,7 +124,7 @@
 .alertify-button-cancel {
 	color: #666;
 	border: 1px solid #ccc;
-	background-color: #fff;
+	background-color: #f1f1f1;
 }
 .alertify-button-cancel:hover {
 	background-color: #f1f1f1;
@@ -153,12 +144,34 @@
 	background-color: #1385e0;
 }
 .alertify-log {
+	width: 100%;
+	min-height: 30px;
+}
+.alertify-log-wrap {
+	position: absolute;
+	left: 50%;
+}
+.alertify-log-content {
 	position: relative;
 	left: -50%;
-	display: inline-block;
+	min-width: 200px;
 	padding: 15px 30px;
 	font-size: 16px;
-	border: 1px solid #ddd;
+	border: 1px solid #cff1ff;
+	background-color: #eaf8fe;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+}
+.alertify-log.alertify-log-success .alertify-log-content {
+	border: 1px solid #daf0d2;
+	background-color: #f3faf0;
+}
+.alertify-log.alertify-log-error .alertify-log-content {
+	border: 1px solid #ffe2cf;
+	background-color: #fff0e6;
+}
+.alertify-log.alertify-log-warning .alertify-log-content {
+	border: 1px solid #ffecc4;
+	background-color: #fff9ee;
 }
 .alertify-log #close-alertify {
 	position: static;
@@ -166,8 +179,7 @@
 	margin-left: 10px;
 	margin-right: -20px;
 }
-.alertify-log:before {
-	content: '';
+.alertify-log .alertify-icon {
 	display: inline-block;
 	width: 32px;
 	height: 32px;
@@ -178,22 +190,13 @@
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
-.alertify-log-success:after {
-	background-color: #31ac45;
-}
-.alertify-log-success:before {
+.alertify-log-success .alertify-icon {
 	background-position: 0 -32px;
 }
-.alertify-log-error:after {
-	background-color: #ea1e3b;
-}
-.alertify-log-error:before {
+.alertify-log-error .alertify-icon {
 	background-position: 0 -64px;
 }
-.alertify-log-warning:after {
-	background-color: #ff9500;
-}
-.alertify-log-warning:before {
+.alertify-log-warning .alertify-icon {
 	background-position: 0 bottom;
 }
 .alertify-plus .plus-log {
@@ -255,9 +258,10 @@
 #close-alertify:hover {
 	color: #ea1e3b;
 }
+
+
 @media only screen and (max-width:680px) {
-	.alertify,
-	.alertify-logs {
+	.alertify {
 		width: 90%;
 		min-width: 90%;
 		max-width: 90%;
@@ -292,6 +296,38 @@
 	animation-duration: 0.5s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutUp {
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-25%);
+		transform: translateY(-25%);
+	}
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes fadeOutUp {
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-25%);
+		-ms-transform: translateY(-25%);
+		transform: translateY(-25%);
+	}
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+.fadeOutUp {
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp;
 }
 
 @-webkit-keyframes slideInDown {
@@ -355,4 +391,33 @@
 .slideInUp {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
 }

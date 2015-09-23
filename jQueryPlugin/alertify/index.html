@@ -6,32 +6,35 @@
 	<link rel="stylesheet" href="jquery.alertify.css" />
 	<meta name="viewport" content="width=device-width" />
 	<style type="text/css">
-	body{padding: 50px;}
+	html,body{padding: 0;margin: 0;}
 	h1{font-size: 26px;}
 	h2{font-size: 18px;}
+	section{padding: 50px;}
 	</style>
 </head>
 <body>
-	<h1>alertify插件 代替浏览器原生alert</h1>
-	<h2>Dialogs</h2>
-	<a href="#" id="alert">Alert</a><br>
-	<a href="#" id="confirm">Confirm</a><br>
-	<a href="#" id="prompt">Prompt</a><br>
-	<a href="#" id="labels">自定义按钮文字</a><br>
-	<a href="#" id="focus">按钮选中</a><br>
-	<a href="#" id="order">按钮位置互换</a>
+	<section>
+		<h1>alertify插件 代替浏览器原生alert</h1>
+		<h2>Dialogs</h2>
+		<a href="#" id="alert">Alert</a><br>
+		<a href="#" id="confirm">Confirm</a><br>
+		<a href="#" id="prompt">Prompt</a><br>
+		<a href="#" id="labels">自定义按钮文字</a><br>
+		<a href="#" id="focus">按钮选中</a><br>
+		<a href="#" id="order">按钮位置互换</a>
 
-	<h2>Logs 2.6s自动消失</h2>
-	<a href="#" id="notification">默认提示</a><br>
-	<a href="#" id="success">成功提示</a><br>
-	<a href="#" id="error">失败错误提示</a><br>
-	<a href="#" id="warning">警告提示</a><br>
-	<a href="#" id="delay">自定义时间延长10s</a><br>
-	<a href="#" id="forever">点击才消失</a>
+		<h2>Logs 2.6s自动消失</h2>
+		<a href="#" id="notification">默认提示</a><br>
+		<a href="#" id="success">成功提示</a><br>
+		<a href="#" id="error">失败错误提示</a><br>
+		<a href="#" id="warning">警告提示</a><br>
+		<a href="#" id="delay">自定义时间延长10s</a><br>
+		<a href="#" id="forever">点击才消失</a>
 
-	<h2>plusTip 点了就知道</h2>
-	<a href="#" id="plustip1">plusTip1</a>
-	<a href="#" id="plustip2">plusTip2</a>
+		<h2>plusTip 点了就知道</h2>
+		<a href="#" id="plustip1">plusTip1</a>
+		<a href="#" id="plustip2">plusTip2</a>
+	</section>
 
 	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.alertify.0.3.11.js"></script>
@@ -108,7 +111,7 @@
 
 		$("#forever").on( 'click', function () {
 			alertifyReset();
-			alertify.log("点我就消失", "", 0);
+			alertify.log("点我就消失点我就消失点我就消失点我就消失点我就消失", "", 0);
 			return false;
 		});
 
