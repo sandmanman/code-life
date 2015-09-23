@@ -49,7 +49,8 @@
 			input: "<div class=\"alertify-text-wrapper\"><input type=\"text\" class=\"alertify-prompt-input\" id=\"alertify-prompt-input\"></div>",
 			message: "<div class=\"alertify-message\">{{message}}</div>",
 			log: "<div class=\"alertify-log{{class}}\">{{message}}</div>",
-			closeDialog: "<button type=\"button\" id=\"close-alertify\">&times;</button>"
+			closeDialog: "<button type=\"button\" id=\"close-alertify\">&times;</button>",
+			headerDialog: "<div class=\"alertify-header\">提示</div>"
 		};
 
 		/**
@@ -107,8 +108,8 @@
 			 * @type {Object}
 			 */
 			labels: {
-				ok: "确定",
-				cancel: "取消"
+				ok: "OK",
+				cancel: "Cancel"
 			},
 
 			/**
@@ -278,6 +279,7 @@
 					css = item.cssClass || "";
 
 				html += "<div class=\"alertify-dialog\">";
+				html += dialogs.headerDialog;
 				if ( _alertify.closeButtonShow !== false ) html += dialogs.closeDialog;
 				html += "<a id=\"alertify-resetFocusBack\" class=\"alertify-resetFocus\" href=\"#\">Reset Focus</a>";
 
@@ -347,7 +349,7 @@
 					self.unbind(this, self.transition.type, transitionDone);
 					// remove log message
 					elLog.removeChild(this);
-					if (!elLog.hasChildNodes()) elLog.className += " alertify-logs-hidden";
+					if (!elLog.hasChildNodes()) elLog.className = "alertify-logs animated slideInUp";
 				};
 				// this sets the hide class to transition out
 				// or removes the child if css transitions aren't supported
@@ -360,7 +362,7 @@
 							el.className += " alertify-log-hide";
 						} else {
 							elLog.removeChild(el);
-							if (!elLog.hasChildNodes()) elLog.className += " alertify-logs-hidden";
+							if (!elLog.hasChildNodes()) elLog.className = "alertify-logs animated slideInUp";
 						}
 					}
 				};
@@ -580,7 +582,7 @@
 				this.init();
 				check();
 
-				elLog.className = "alertify-logs";
+				elLog.className = "alertify-logs animated slideInDown";
 				this.notify(message, type, wait);
 				return this;
 			},
@@ -612,8 +614,8 @@
 				this.close(log, wait);
 
 				//调用位置计算
-				_alertify.position();
-				_alertify.resizePosition();
+				//_alertify.position();
+				//_alertify.resizePosition();
 			},
 
 			/**
@@ -705,7 +707,7 @@
 					elLogLeftPos = (windowWidth - elLog.offsetWidth)/2;
 
 				_alertify.setStyle(elDialog,{top:dialogTopPos +"px",left:dialogLeftPos +"px"});
-				_alertify.setStyle(elLog,{top:elLogTopPos +"px",left:elLogLeftPos +"px"});
+				//_alertify.setStyle(elLog,{top:elLogTopPos +"px",left:elLogLeftPos +"px"});
 
 				//console.log(elDialog.offsetHeight)
 				
