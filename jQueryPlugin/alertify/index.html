@@ -32,7 +32,8 @@
 		<a href="#" id="forever">点击才消失</a>
 
 		<h2>plusTip 点了就知道</h2>
-		<a href="#" id="plustip1">plusTip1</a>
+		<a href="#" id="plustip1">plusTip1 6S后消失</a>
+		<br>
 		<a href="#" id="plustip2">plusTip2</a>
 	</section>
 
@@ -166,7 +167,7 @@
 		//follow plus tip
 		$("#plustip1").on( 'click', function () {
 			alertifyReset();
-			alertify.plusTip(this,"积分 +10086",10000);
+			alertify.plusTip(this,"积分 +10086",6000);
 			return false;
 		});
 		$("#plustip2").on( 'click', function () {
