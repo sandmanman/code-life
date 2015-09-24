@@ -1,4 +1,3 @@
-
 /**
  * alertify
  * An unobtrusive customizable JavaScript notification system
@@ -9,11 +8,11 @@
  * @link http://fabien-d.github.com/alertify.js/
  * @module alertify
  * @version 0.3.11
-
+ 
  * 修改开始于02.13.2015
  * 为了浏览器的通用性，将HTML5标签修修改为DIV
  * 增加了 位置的计算 垂直水平居中
-
+ 
  */
 ;
 (function(global, undefined) {
@@ -72,7 +71,7 @@
 					"OTransition": "otransitionend",
 					"transition": "transitionend"
 				};
-			
+
 			for (t in transitions) {
 				if (el.style[t] !== undefined) {
 					type = transitions[t];
@@ -280,7 +279,7 @@
 
 				html += "<div class=\"alertify-dialog\">";
 				html += dialogs.headerDialog;
-				if ( _alertify.closeButtonShow !== false ) html += dialogs.closeDialog;
+				if (_alertify.closeButtonShow !== false) html += dialogs.closeDialog;
 				html += "<a id=\"alertify-resetFocusBack\" class=\"alertify-resetFocus\" href=\"#\">Reset Focus</a>";
 
 				if (_alertify.buttonFocus === "none") html += "<a href=\"#\" id=\"alertify-noneFocus\" class=\"alertify-hidden\"></a>";
@@ -331,19 +330,19 @@
 			 *
 			 * @return {undefined}
 			 */
-			close : function (elem, wait) {
+			close: function(elem, wait) {
 				// Unary Plus: +"2" === 2
 				var timer = (wait && !isNaN(wait)) ? +wait : this.delay,
-				    self  = this,
-				    hideElement, transitionDone;
+					self = this,
+					hideElement, transitionDone;
 
 				// set click event on log messages
-				this.bind(elem, "click", function () {
+				this.bind(elem, "click", function() {
 					hideElement(elem);
 				});
 				// Hide the dialog box after transition
 				// This ensure it doens't block any element from being clicked
-				transitionDone = function (event) {
+				transitionDone = function(event) {
 					event.stopPropagation();
 					// unbind event so function only gets called once
 					self.unbind(this, self.transition.type, transitionDone);
@@ -353,7 +352,7 @@
 				};
 				// this sets the hide class to transition out
 				// or removes the child if css transitions aren't supported
-				hideElement = function (el) {
+				hideElement = function(el) {
 					// ensure element exists
 					if (typeof el !== "undefined" && el.parentNode === elLog) {
 						// whether CSS transition exists
@@ -369,7 +368,9 @@
 				// never close (until click) if wait is set to 0
 				if (wait === 0) return;
 				// set timeout to auto close the log message
-				setTimeout(function () { hideElement(elem); }, timer);
+				setTimeout(function() {
+					hideElement(elem);
+				}, timer);
 			},
 
 			/**
@@ -514,7 +515,7 @@
 			 * 可用于点击某元素时，显示在当前点击元素的上方后，逐渐消失
 			 */
 			plusTip: function(obj, message, wait) {
-				var timer = (wait && !isNaN(wait)) ? + wait : this.delay;
+				var timer = (wait && !isNaN(wait)) ? +wait : this.delay;
 				//清空plus-log
 				var plusDom = document.getElementById("alertify-plus");
 				jQuery(plusDom).remove();
@@ -528,7 +529,7 @@
 				}
 
 				elPlus.className = "alertify-plus";
-				
+
 				//tip message
 				var plusLog = document.createElement("div");
 				var arrow = document.createElement("i");
@@ -537,27 +538,30 @@
 				plusLog.innerHTML = message;
 				elPlus.appendChild(plusLog);
 				plusLog.appendChild(arrow);
-				
+
 				//点击对象的位置
 				var objTop = obj.offsetTop,
 					objLeft = obj.offsetLeft;
 				var objWidth = obj.offsetWidth,
 					objHeight = obj.offsetHeight;
-				while ( obj = obj.offsetParent ) {
+				while (obj = obj.offsetParent) {
 					objTop += obj.offsetTop;
 					objLeft += obj.offsetLeft;
 				}
 
-				_alertify.setStyle(plusLog,{top:(objTop - objHeight - 12) +"px", left:objLeft +"px"});
+				_alertify.setStyle(plusLog, {
+					top: (objTop - objHeight - 12) + "px",
+					left: objLeft + "px"
+				});
 
 				//remove plusTip
 				setTimeout(function() {
 					plusLog.className += " fadeOutUp animated";
-					setTimeout(function(){
+					setTimeout(function() {
 						jQuery(elPlus).remove();
-					},1000);
+					}, 1000);
 				}, timer);
-       			 	
+
 			},
 
 			/**
@@ -693,34 +697,40 @@
 
 			/**
 			 * 位置计算
-			*/
-			position: function (){
+			 */
+			position: function() {
 				var windowWidth = document.documentElement.clientWidth,
 					windowHeight = document.documentElement.clientHeight;
 
-				var dialogTopPos = (windowHeight - elDialog.offsetHeight)/2,
-					dialogLeftPos = (windowWidth - elDialog.offsetWidth)/2;
+				var dialogTopPos = (windowHeight - elDialog.offsetHeight) / 2,
+					dialogLeftPos = (windowWidth - elDialog.offsetWidth) / 2;
 
-				var elLogTopPos = (windowHeight - elLog.offsetHeight)/2,
-					elLogLeftPos = (windowWidth - elLog.offsetWidth)/2;
+				var elLogTopPos = (windowHeight - elLog.offsetHeight) / 2,
+					elLogLeftPos = (windowWidth - elLog.offsetWidth) / 2;
 
-				_alertify.setStyle(elDialog,{top:dialogTopPos +"px",left:dialogLeftPos +"px"});
-				_alertify.setStyle(elLog,{top:elLogTopPos +"px",left:elLogLeftPos +"px"});
+				_alertify.setStyle(elDialog, {
+					top: dialogTopPos + "px",
+					left: dialogLeftPos + "px"
+				});
+				_alertify.setStyle(elLog, {
+					top: elLogTopPos + "px",
+					left: elLogLeftPos + "px"
+				});
 
 				//console.log(elDialog.offsetHeight)
-				
+
 			},
 
 			//resize position
-			resizePosition: function (){
-				window.onresize=function(){
+			resizePosition: function() {
+				window.onresize = function() {
 					_alertify.position();
 				};
 			},
 
 			/**
 			 * 给元素添加多个style函数
-			*/
+			 */
 			setStyle: function(obj, css) {
 				for (var atr in css) {
 					obj.style[atr] = css[atr];
@@ -812,6 +822,6 @@ function alertifyReset() {
 		delay: 2600,
 		buttonReverse: false,
 		buttonFocus: "none",
-		closeButtonShow:true
+		closeButtonShow: true
 	});
 }
