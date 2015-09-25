@@ -43,8 +43,15 @@
 	$(document).ready(function() {
 
 		// ==============================
-		
+		//alert
+		$("#alert").click(function() {
+			alertify.alert("This is an alert message!").set("label","确定");
+		});
 
+		//Confirm
+		$("#confirm").click(function() {
+			alertify.confirm("This is an confirm message!").set("labels",{ok:"确认",cancel:"取消"});
+		});
 
 		//follow plus tip
 		// $("#plustip1").on( 'click', function () {

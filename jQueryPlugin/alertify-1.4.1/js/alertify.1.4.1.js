@@ -44,7 +44,7 @@
             position: 'bottom-right'
         },
         glossary: {
-            title: 'AlertifyJS',
+            title: 'tip',
             ok: 'OK',
             cancel: 'Cancel',
             acccpt: 'Accept',
