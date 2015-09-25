@@ -811,7 +811,8 @@
 
 
 /*
- alertify默认重置函数(为什么要这样再重置一遍)
+* alertify默认重置函数
+* 为什么要这样再重置一遍
 */
 function alertifyReset() {
 	alertify.set({
@@ -819,7 +820,6 @@ function alertifyReset() {
 			ok: "确定",
 			cancel: "取消"
 		},
-		delay: 2600,
 		buttonReverse: false,
 		buttonFocus: "none",
 		closeButtonShow: true
