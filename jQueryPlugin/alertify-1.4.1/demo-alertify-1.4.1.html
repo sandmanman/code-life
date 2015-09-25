@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>alertify插件 代替浏览器原生alert</title>
+	<link rel="stylesheet" href="css/alertify.css" />
+	<meta name="viewport" content="width=device-width" />
+	<style type="text/css">
+	html,body{padding: 0;margin: 0;}
+	h1{font-size: 26px;}
+	h2{font-size: 18px;}
+	section{padding: 50px;}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>alertify插件 代替浏览器原生alert</h1>
+		<h2>Dialogs</h2>
+		<a href="#" id="alert">Alert</a><br>
+		<a href="#" id="confirm">Confirm</a><br>
+		<a href="#" id="prompt">Prompt</a><br>
+		<a href="#" id="labels">自定义按钮文字</a><br>
+		<a href="#" id="focus">按钮选中</a><br>
+		<a href="#" id="order">按钮位置互换</a>
+
+		<h2>Logs 2.6s自动消失</h2>
+		<a href="#" id="notification">默认提示</a><br>
+		<a href="#" id="success">操作成功</a><br>
+		<a href="#" id="error">失败错误提示</a><br>
+		<a href="#" id="warning">警告提示</a><br>
+		<a href="#" id="delay">自定义消失时间，10S后自动消失（默认1.5S）</a><br>
+		<a href="#" id="forever">点我就消失</a>
+
+		<h2>plusTip 点了就知道</h2>
+		<a href="#" id="plustip1">plusTip1 6S后消失</a>
+		<br>
+		<a href="#" id="plustip2">plusTip2</a>
+	</section>
+
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/alertify.1.4.1.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		// ==============================
+		
+
+
+		//follow plus tip
+		// $("#plustip1").on( 'click', function () {
+		// 	alertifyReset();
+		// 	alertify.plusTip(this,"积分 +10086",6000);
+		// 	return false;
+		// });
+		// $("#plustip2").on( 'click', function () {
+		// 	alertifyReset();
+		// 	alertify.plusTip(this,"积分 再加 +10086");
+		// 	return false;
+		// });
+
+	});
+		
+	</script>
+
+</body>
+</html>
