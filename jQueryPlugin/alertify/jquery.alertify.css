@@ -245,21 +245,9 @@ for everything except IE6-8 */
 	background-position: 0 bottom;
 }
 @media only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min--moz-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
-	.alertify-log:before {
+	.alertify-log .alertify-icon {
 		background-image: url(alert-icon-big@2x.png);
 		background-size: 64px auto;
-	}
-	.alertify-log:before {
-		background-position: 0 0;
-	}
-	.alertify-log-success:before {
-		background-position: 0 -32px;
-	}
-	.alertify-log-error:before {
-		background-position: 0 -64px;
-	}
-	.alertify-log-warning:before {
-		background-position: 0 bottom;
 	}
 }
 .alertify-plus .plus-log {
