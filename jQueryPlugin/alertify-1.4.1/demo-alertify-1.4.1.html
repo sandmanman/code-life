@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>alertify插件 代替浏览器原生alert</title>
+	<title>alertify1.4.1</title>
 	<link rel="stylesheet" href="css/alertify.css" />
 	<meta name="viewport" content="width=device-width" />
 	<style type="text/css">
@@ -20,21 +20,20 @@
 		<a href="#" id="confirm">Confirm</a><br>
 		<a href="#" id="prompt">Prompt</a><br>
 		<a href="#" id="labels">自定义按钮文字</a><br>
-		<a href="#" id="focus">按钮选中</a><br>
-		<a href="#" id="order">按钮位置互换</a>
+		<a href="#" id="focus">取消按钮选中</a><br>
+		<a href="#" id="title-custom">标题自定义</a>
 
-		<h2>Logs 2.6s自动消失</h2>
+		<h2>Notify 5s自动消失</h2>
 		<a href="#" id="notification">默认提示</a><br>
 		<a href="#" id="success">操作成功</a><br>
 		<a href="#" id="error">失败错误提示</a><br>
 		<a href="#" id="warning">警告提示</a><br>
-		<a href="#" id="delay">自定义消失时间，10S后自动消失（默认1.5S）</a><br>
-		<a href="#" id="forever">点我就消失</a>
+		<a href="#" id="delay">10S后自动消失（默认5S）</a><br>
 
-		<h2>plusTip 点了就知道</h2>
+		<!-- <h2>plusTip 点了就知道</h2>
 		<a href="#" id="plustip1">plusTip1 6S后消失</a>
 		<br>
-		<a href="#" id="plustip2">plusTip2</a>
+		<a href="#" id="plustip2">plusTip2</a> -->
 	</section>
 
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -45,25 +44,80 @@
 		// ==============================
 		//alert
 		$("#alert").click(function() {
-			alertify.alert("This is an alert message!").set("label","确定");
+			alertify.alert().set({
+				message:"This is an alert message!"
+			}).show();
 		});
 
-		//Confirm
+		//confirm
 		$("#confirm").click(function() {
-			alertify.confirm("This is an confirm message!").set("labels",{ok:"确认",cancel:"取消"});
+			alertify.confirm("This is an confirm message!").set({
+				//"labels",{ok:"确认",cancel:"取消"},
+				message:"This is an confirm message!",
+				onok: function(){
+					alertify.notify('OK');
+				},
+				oncancel: function(){
+					alertify.error('Cancel');
+				}
+			}).show();
 		});
 
-		//follow plus tip
-		// $("#plustip1").on( 'click', function () {
-		// 	alertifyReset();
-		// 	alertify.plusTip(this,"积分 +10086",6000);
-		// 	return false;
-		// });
-		// $("#plustip2").on( 'click', function () {
-		// 	alertifyReset();
-		// 	alertify.plusTip(this,"积分 再加 +10086");
-		// 	return false;
-		// });
+		//prompt
+		$("#prompt").click(function() {
+			var dv = "sandman";
+			alertify.prompt().set({
+				message:"This is prompt dialog!",
+				value: dv,
+				onok: function(evt, value){
+					alertify.success('OK:' + value);
+				},
+				oncancel: function(){
+					alertify.error("Cancel");
+				}
+			}).show();
+				
+		});
+
+		//自定义按钮文字
+		$("#labels").click(function() {
+			alertify.confirm().set({
+				labels: {ok: "确认", cancel: "取消"},
+				message: "自定义按钮文字",
+			}).show();
+		});
+
+		//标题自定义
+		$("#title-custom").click(function() {
+			alertify.alert().set({
+				title: "这是标题可自定义",
+				message: "This is alert message!"
+			}).show();
+		});
+
+		//提示
+		$("#notification").click(function() {
+			alertify.set('notifier', 'position', 'top-center')
+			alertify.message("默认提示",1000);
+		});
+		//成功提示
+		$("#success").click(function() {
+			//alertify.set('notifier', 'position', 'top-right')
+			alertify.success("成功提示");
+		});
+		//错误
+		$("#error").click(function() {
+			//alertify.set('notifier', 'position', 'top-right')
+			alertify.error("错误提示");
+		});
+		//警告
+		$("#warning").click(function() {
+			//alertify.set('notifier', 'position', 'top-right')
+			alertify.warning("警告提示");
+		});
+		$("#delay").click(function() {
+			alertify.message("10S后再消失",10);
+		});
 
 	});
 		

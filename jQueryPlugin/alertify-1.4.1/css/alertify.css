@@ -90,7 +90,7 @@
   min-height: 56px;
 }
 .alertify .ajs-body .ajs-content {
-  padding: 16px 24px 16px 16px;
+  padding: 16px 0;
 }
 .alertify .ajs-footer {
   padding: 4px;
@@ -854,6 +854,12 @@
 }
 .alertify-notifier .ajs-message.ajs-warning {
   background: rgba(252, 248, 215, 0.95);
+}
+.alertify-notifier.ajs-center {
+  width: 100%;
+}
+.alertify-notifier.ajs-center .ajs-message {
+  margin: 0 auto 5% auto;
 }
 .alertify-notifier.ajs-top {
   top: 10px;

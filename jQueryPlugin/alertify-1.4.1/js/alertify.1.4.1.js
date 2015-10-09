@@ -37,7 +37,7 @@
         padding: true,
         overflow: true,
         maintainFocus: true,
-        transition: 'pulse',
+        transition: 'zoom',
         autoReset: true,
         notifier: {
             delay: 5,
@@ -2331,6 +2331,7 @@
                 right: 'ajs-right',
                 bottom: 'ajs-bottom',
                 left: 'ajs-left',
+                center: 'ajs-center',
                 visible: 'ajs-visible',
                 hidden: 'ajs-hidden'
             };
@@ -2381,6 +2382,9 @@
                     break;
                 case 'bottom-left':
                     addClass(element, classes.bottom + ' ' + classes.left);
+                    break;
+                case 'top-center':
+                    addClass(element, classes.top + ' ' + classes.center);
                     break;
 
                 default:
