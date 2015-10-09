@@ -41,7 +41,7 @@
         autoReset: true,
         notifier: {
             delay: 5,
-            position: 'bottom-right'
+            position: 'top-right'
         },
         glossary: {
             title: 'tip',

@@ -200,13 +200,12 @@ for everything except IE6-8 */
 	background-color: #1385e0;
 }
 .alertify-log-wrap {
-	min-width: 260px;
-	max-width: 260px;
+	min-width: 300px;
+	max-width: 300px;
 }
 .alertify-log-content {
-	padding: 30px;
+	padding: 20px 50px 20px 60px;
 	font-size: 16px;
-	text-align: center;
 	border-radius: 6px;
 	border: 1px solid #bce9fb;
 	background-color: #eaf8fe;
@@ -225,31 +224,38 @@ for everything except IE6-8 */
 	background-color: #fff9ee;
 }
 .alertify-log .alertify-icon {
-	display: block;
-	width: 64px;
-	height: 64px;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	margin-top: -16px;
+	width: 32px;
+	height: 32px;
 	overflow: hidden;
-	margin: 0 auto 20px auto;
 	vertical-align: top;
-	background-image: url(alert-icon-big.png);
+	background-image: url(alert-icon-small.png);
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
 .alertify-log-success .alertify-icon { 
-	background-position: 0 -64px;
+	background-position: 0 -32px;
 }
 .alertify-log-error .alertify-icon {
-	background-position: 0 -128px;
+	background-position: 0 -64px;
 }
 .alertify-log-warning .alertify-icon {
 	background-position: 0 bottom;
 }
 @media only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min--moz-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
 	.alertify-log .alertify-icon {
-		background-image: url(alert-icon-big@2x.png);
+		background-image: url(alert-icon-small@2x.png);
 		background-size: 64px auto;
 	}
 }
+.alertify-log #close-alertify {
+	top: 50%;
+	margin-top: -12px;
+}
+
 .alertify-plus .plus-log {
 	position: absolute;
 	padding: 4px 8px;
