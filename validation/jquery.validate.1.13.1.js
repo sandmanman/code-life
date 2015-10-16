@@ -1,4 +1,3 @@
-
 /* 
  * jQuery Validation Plugin v1.13.1
  *
@@ -8,7 +7,7 @@
  * Released under the MIT license
  * 根据官方修改：增加focus提示（默认提示）
  * 05.04.2015
-*/
+ */
 (function(factory) {
 	if (typeof define === "function" && define.amd) {
 		define(["jquery"], factory);

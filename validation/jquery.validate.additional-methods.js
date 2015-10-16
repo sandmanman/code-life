@@ -1,10 +1,9 @@
-
-/* ====================================
+/* 
  * jQuery Validation
  * 验证扩展
  * 02.28.2015
- * ====================================
-*/
+ * 
+ */
 
 (function(factory) {
 	if (typeof define === "function" && define.amd) {
@@ -71,13 +70,13 @@
 		// Either return true because we've validated each file, or because the
 		// browser does not support element.files and the FileList feature
 		return true;
-	}, $.validator.format("请输入指定类型的文件"));
+	}, $.validator.format("请上传指定类型的文件"));
 
 
-	/* ====================================
+	/* 
 	 * 验证中文扩展 (源码来自网络)
 	 * 02.16.2015
-	 * ====================================
+	 * 
 	 */
 
 	// 邮政编码
@@ -260,19 +259,19 @@
 
 
 
-/* ====================================
+/* 
  * 源码英文提示语，重置为中文
  * 02.16.2015
- * ====================================
+ * 
  */
 jQuery.extend(jQuery.validator.messages, {
-	required: "不能为空",
-	remote: "请修正该字段",
+	required: "这是必须要的填的哦",
+	remote: "输错了吧，请修正",
 	email: "请输入正确格式的邮箱",
 	url: "请输入正确格式的网址",
 	date: "请输入正确格式的日期",
-	dateISO: "请输入正确格式的日期 (ISO).", //例如：2009-06-23，1998/01/22。只验证格式，不验证有效性。
-	number: "请输入合法的数字",
+	dateISO: "请输入正确格式的日期.", //例如：2009-06-23，1998/01/22。只验证格式，不验证有效性。
+	number: "请输入数字",
 	digits: "只能输入整数",
 	creditcard: "请输入合法的信用卡号",
 	equalTo: "请再次输入相同的值",
