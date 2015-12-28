@@ -2,8 +2,16 @@
 
 前端代码摘抄修改积累
 
-####移动端浏览器判断
+###浏览器版本判断
+```javascript
+var ua = navigator.userAgent.toLowerCase();
+var ie67 = ua.indexOf('msie 6.0')!=-1 || ua.indexOf('msie 7.0')!=-1;
+var ie8 = ua.indexOf('msie 8.0')!=-1;
+var isMobile = ua.indexOf('mobile')!=-1;
+var mac = ua.indexOf('mac os x')!=-1
+```
 
+###移动端浏览器判断
 ```javascript
 var isIDevicePhone = (/iphone|ipod/gi).test(navigator.platform);
 var isIDeviceIpad = !isIDevicePhone && (/ipad/gi).test(navigator.platform);
@@ -45,7 +53,7 @@ var redirect = function() {
 redirect();
 ```
 
-####CSS Rem 使用
+###CSS Rem 使用
 ```css
 html { font-size: 62.5%; } 
 body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
