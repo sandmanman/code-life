@@ -1,6 +1,9 @@
 #codeLife
 
-前端代码摘抄修改积累
+前端代码摘抄
+
+###项目规范
+<a href="https://github.com/ecomfe/spec" target="_blank">项目规范</a>
 
 ###浏览器版本判断
 ```javascript
