@@ -65,4 +65,8 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
 
 ###CSS高消耗属性
 
-box-shadows  border-radius  transparency  transforms  CSS filters（性能杀手）
+box-shadows
+border-radius
+transparency
+transforms
+CSS filters（性能杀手）
