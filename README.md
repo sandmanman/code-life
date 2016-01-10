@@ -62,3 +62,7 @@ html { font-size: 62.5%; }
 body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
 h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
 ```
+
+###CSS高消耗属性
+
+box-shadows  border-radius  transparency  transforms  CSS filters（性能杀手）
