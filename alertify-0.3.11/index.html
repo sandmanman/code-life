@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>alertify插件 代替浏览器原生alert</title>
+	<title>alertify.0.3.11 替代浏览器原生alert</title>
 	<link rel="stylesheet" href="jquery.alertify.css" />
 	<meta name="viewport" content="width=device-width" />
 	<style type="text/css">
@@ -27,14 +27,9 @@
 		<a href="#" id="notification">默认提示</a><br>
 		<a href="#" id="success">操作成功</a><br>
 		<a href="#" id="error">失败错误提示</a><br>
-		<a href="#" id="warning">警告提示</a><br>
 		<a href="#" id="delay">自定义消失时间，10S后自动消失（默认1.5S）</a><br>
 		<a href="#" id="forever">点我就消失</a>
 
-		<h2>plusTip 点了就知道</h2>
-		<a href="#" id="plustip1">plusTip1 6S后消失</a>
-		<br>
-		<a href="#" id="plustip2">plusTip2</a>
 	</section>
 
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -93,12 +88,6 @@
 		$("#error").on( 'click', function () {
 			alertifyReset();
 			alertify.error("不好了!遇到了问题，请立即处理吧。");
-			return false;
-		});
-
-		$("#warning").on( 'click', function () {
-			alertifyReset();
-			alertify.warning("注意! 看起来遇到一些问题。");
 			return false;
 		});
 
@@ -163,18 +152,6 @@
 			return false;
 		});
 
-
-		//follow plus tip
-		$("#plustip1").on( 'click', function () {
-			alertifyReset();
-			alertify.plusTip(this,"积分 +10086",6000);
-			return false;
-		});
-		$("#plustip2").on( 'click', function () {
-			alertifyReset();
-			alertify.plusTip(this,"积分 再加 +10086");
-			return false;
-		});
 
 	});
 		

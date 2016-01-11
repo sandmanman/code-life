@@ -14,75 +14,65 @@
  * 增加了 位置的计算 垂直水平居中
  
  */
-;
-(function(global, undefined) {
-	"use strict"; //严格模式
+/*global define*/
+(function (global, undefined) {
+	"use strict";
 
 	var document = global.document,
-		Alertify;
+	    Alertify;
 
-	Alertify = function() {
+	Alertify = function () {
 
 		var _alertify = {},
-			dialogs = {},
-			isopen = false,
-			keys = {
-				ENTER: 13,
-				ESC: 27,
-				SPACE: 32
-			},
-			queue = [],
-			$, btnCancel, btnOK, btnClose, btnReset, btnResetBack, btnFocus, elCallee, elCover, elDialog, elLog, form, input, getTransitionEvent, elPlus;
+		    dialogs   = {},
+		    isopen    = false,
+		    keys      = { ENTER: 13, ESC: 27, SPACE: 32 },
+		    queue     = [],
+		    $, btnCancel, btnOK, btnReset, btnResetBack, btnFocus, elCallee, elCover, elDialog, elLog, form, input, getTransitionEvent;
 
 		/**
 		 * Markup pieces
 		 * @type {Object}
 		 */
 		dialogs = {
-			buttons: {
-				holder: "<div class=\"alertify-buttons\">{{buttons}}</div>",
-				submit: "<button type=\"submit\" class=\"alertify-button alertify-button-ok\" id=\"alertify-ok\">{{ok}}</button>",
-				cancel: "<button class=\"alertify-button alertify-button-cancel\" id=\"alertify-cancel\">{{cancel}}</button>",
-				ok: "<button class=\"alertify-button alertify-button-ok\" id=\"alertify-ok\">{{ok}}</button>"
+			buttons : {
+				holder : "<div class=\"alertify-buttons\">{{buttons}}</div>",
+				submit : "<button type=\"submit\" class=\"alertify-button alertify-button-ok\" id=\"alertify-ok\">{{ok}}</button>",
+				ok     : "<button class=\"alertify-button alertify-button-ok\" id=\"alertify-ok\">{{ok}}</button>",
+				cancel : "<button class=\"alertify-button alertify-button-cancel\" id=\"alertify-cancel\">{{cancel}}</button>"
 			},
-			input: "<div class=\"alertify-text-wrapper\"><input type=\"text\" class=\"alertify-prompt-input\" id=\"alertify-prompt-input\"></div>",
-			message: "<div class=\"alertify-message\">{{message}}</div>",
-			log: "<div class=\"alertify-log{{class}}\">{{message}}</div>",
-			closeDialog: "<button type=\"button\" id=\"close-alertify\">&times;</button>",
-			headerDialog: "<div class=\"alertify-header\">提示</div>"
+			input   : "<div class=\"alertify-text-wrapper\"><input type=\"text\" class=\"alertify-text\" id=\"alertify-text\"></div>",
+			message : "<p class=\"alertify-message\">{{message}}</p>",
+			log     : "<div class=\"alertify-log{{class}}\">{{message}}</div>"
 		};
 
 		/**
 		 * Return the proper transitionend event
 		 * @return {String}    Transition type string
 		 */
-		getTransitionEvent = function() {
-
-			// 此段是需要考虑浏览器的前缀：// 
-			// transitionend 事件和  animationend 事件是标准浏览器使用的, //
-			// 但基于webkit的浏览器仍然依赖于前缀,所以我们必须先确定事件的前缀,然后才能调用。//
+		getTransitionEvent = function () {
 			var t,
-				type,
-				supported = false,
-				el = document.createElement("fakeelement"),
-				transitions = {
-					"WebkitTransition": "webkitTransitionEnd",
-					"MozTransition": "transitionend",
-					"OTransition": "otransitionend",
-					"transition": "transitionend"
-				};
+			    type,
+			    supported   = false,
+			    el          = document.createElement("fakeelement"),
+			    transitions = {
+				    "WebkitTransition" : "webkitTransitionEnd",
+				    "MozTransition"    : "transitionend",
+				    "OTransition"      : "otransitionend",
+				    "transition"       : "transitionend"
+			    };
 
 			for (t in transitions) {
 				if (el.style[t] !== undefined) {
-					type = transitions[t];
+					type      = transitions[t];
 					supported = true;
 					break;
 				}
 			}
 
 			return {
-				type: type,
-				supported: supported
+				type      : type,
+				supported : supported
 			};
 		};
 
@@ -92,7 +82,7 @@
 		 * @param  {String} id    A specific element ID
 		 * @return {Object}       HTML element
 		 */
-		$ = function(id) {
+		$ = function (id) {
 			return document.getElementById(id);
 		};
 
@@ -106,39 +96,34 @@
 			 * Labels object
 			 * @type {Object}
 			 */
-			labels: {
-				ok: "OK",
-				cancel: "Cancel"
+			labels : {
+				ok     : "OK",
+				cancel : "Cancel"
 			},
 
 			/**
 			 * Delay number
 			 * @type {Number}
 			 */
-			delay: 1500,
+			delay : 5000,
 
 			/**
 			 * Whether buttons are reversed (default is secondary/primary)
 			 * @type {Boolean}
 			 */
-			buttonReverse: false,
+			buttonReverse : false,
 
 			/**
 			 * Which button should be focused by default
-			 * @type {String}	"ok", "cancel", or "none" (default)
+			 * @type {String}	"ok" (default), "cancel", or "none"
 			 */
-			buttonFocus: "none",
+			buttonFocus : "ok",
 
 			/**
 			 * Set the transition event on load
 			 * @type {[type]}
 			 */
-			transition: undefined,
-
-			/**
-			 * close button true false
-			 */
-			closeButtonShow: false,
+			transition : undefined,
 
 			/**
 			 * Set the proper button click events
@@ -147,30 +132,30 @@
 			 *
 			 * @return {undefined}
 			 */
-			addListeners: function(fn) {
-				var hasOK = (typeof btnOK !== "undefined"),
-					hasCancel = (typeof btnCancel !== "undefined"),
-					hasClose = (typeof btnClose !== "undefined"),
-					hasInput = (typeof input !== "undefined"),
-					val = "",
-					self = this,
-					ok, cancel, common, key, reset;
+			addListeners : function (fn) {
+				var hasOK     = (typeof btnOK !== "undefined"),
+				    hasCancel = (typeof btnCancel !== "undefined"),
+				    hasInput  = (typeof input !== "undefined"),
+				    val       = "",
+				    self      = this,
+				    ok, cancel, common, key, reset;
 
 				// ok event handler
-				ok = function(event) {
+				ok = function (event) {
 					if (typeof event.preventDefault !== "undefined") event.preventDefault();
 					common(event);
 					if (typeof input !== "undefined") val = input.value;
 					if (typeof fn === "function") {
 						if (typeof input !== "undefined") {
 							fn(true, val);
-						} else fn(true);
+						}
+						else fn(true);
 					}
 					return false;
 				};
 
 				// cancel event handler
-				cancel = function(event) {
+				cancel = function (event) {
 					if (typeof event.preventDefault !== "undefined") event.preventDefault();
 					common(event);
 					if (typeof fn === "function") fn(false);
@@ -178,7 +163,7 @@
 				};
 
 				// common event handler (keyup, ok and cancel)
-				common = function(event) {
+				common = function (event) {
 					self.hide();
 					self.unbind(document.body, "keyup", key);
 					self.unbind(btnReset, "focus", reset);
@@ -187,14 +172,14 @@
 				};
 
 				// keyup handler
-				key = function(event) {
+				key = function (event) {
 					var keyCode = event.keyCode;
 					if ((keyCode === keys.SPACE && !hasInput) || (hasInput && keyCode === keys.ENTER)) ok(event);
 					if (keyCode === keys.ESC && hasCancel) cancel(event);
 				};
 
 				// reset focus to first item in the dialog
-				reset = function(event) {
+				reset = function (event) {
 					if (hasInput) input.focus();
 					else if (!hasCancel || self.buttonReverse) btnOK.focus();
 					else btnCancel.focus();
@@ -210,7 +195,6 @@
 				if (hasOK) this.bind(btnOK, "click", ok);
 				// handle Cancel click
 				if (hasCancel) this.bind(btnCancel, "click", cancel);
-				if (hasClose) this.bind(btnClose, "click", common);
 				// listen for keys, Cancel => ESC
 				this.bind(document.body, "keyup", key);
 				if (!this.transition.supported) {
@@ -227,7 +211,7 @@
 			 *
 			 * @return {undefined}
 			 */
-			bind: function(el, event, fn) {
+			bind : function (el, event, fn) {
 				if (typeof el.addEventListener === "function") {
 					el.addEventListener(event, fn, false);
 				} else if (el.attachEvent) {
@@ -240,10 +224,10 @@
 			 *
 			 * @return {boolean} success
 			 */
-			handleErrors: function() {
+			handleErrors : function () {
 				if (typeof global.onerror !== "undefined") {
 					var self = this;
-					global.onerror = function(msg, url, line) {
+					global.onerror = function (msg, url, line) {
 						self.error("[" + msg + " on line " + line + " of " + url + "]", 0);
 					};
 					return true;
@@ -260,7 +244,7 @@
 			 *
 			 * @return {String}             The appended button HTML strings
 			 */
-			appendButtons: function(secondary, primary) {
+			appendButtons : function (secondary, primary) {
 				return this.buttonReverse ? primary + secondary : secondary + primary;
 			},
 
@@ -271,15 +255,13 @@
 			 *
 			 * @return {String}         An HTML string of the message box
 			 */
-			build: function(item) {
-				var html = "",
-					type = item.type,
-					message = item.message,
-					css = item.cssClass || "";
+			build : function (item) {
+				var html    = "",
+				    type    = item.type,
+				    message = item.message,
+				    css     = item.cssClass || "";
 
 				html += "<div class=\"alertify-dialog\">";
-				html += dialogs.headerDialog;
-				if (_alertify.closeButtonShow !== false) html += dialogs.closeDialog;
 				html += "<a id=\"alertify-resetFocusBack\" class=\"alertify-resetFocus\" href=\"#\">Reset Focus</a>";
 
 				if (_alertify.buttonFocus === "none") html += "<a href=\"#\" id=\"alertify-noneFocus\" class=\"alertify-hidden\"></a>";
@@ -287,7 +269,7 @@
 				// doens't require an actual form
 				if (type === "prompt") html += "<div id=\"alertify-form\">";
 
-				//html += "<div class=\"alertify-inner\">";
+				html += "<div class=\"alertify-inner\">";
 				html += dialogs.message.replace("{{message}}", message);
 
 				if (type === "prompt") html += dialogs.input;
@@ -301,24 +283,24 @@
 				html += "</div>";
 
 				switch (type) {
-					case "confirm":
-						html = html.replace("{{buttons}}", this.appendButtons(dialogs.buttons.cancel, dialogs.buttons.ok));
-						html = html.replace("{{ok}}", this.labels.ok).replace("{{cancel}}", this.labels.cancel);
-						break;
-					case "prompt":
-						html = html.replace("{{buttons}}", this.appendButtons(dialogs.buttons.cancel, dialogs.buttons.submit));
-						html = html.replace("{{ok}}", this.labels.ok).replace("{{cancel}}", this.labels.cancel);
-						break;
-					case "alert":
-						html = html.replace("{{buttons}}", dialogs.buttons.ok);
-						html = html.replace("{{ok}}", this.labels.ok);
-						break;
-					default:
-						break;
+				case "confirm":
+					html = html.replace("{{buttons}}", this.appendButtons(dialogs.buttons.cancel, dialogs.buttons.ok));
+					html = html.replace("{{ok}}", this.labels.ok).replace("{{cancel}}", this.labels.cancel);
+					break;
+				case "prompt":
+					html = html.replace("{{buttons}}", this.appendButtons(dialogs.buttons.cancel, dialogs.buttons.submit));
+					html = html.replace("{{ok}}", this.labels.ok).replace("{{cancel}}", this.labels.cancel);
+					break;
+				case "alert":
+					html = html.replace("{{buttons}}", dialogs.buttons.ok);
+					html = html.replace("{{ok}}", this.labels.ok);
+					break;
+				default:
+					break;
 				}
 
 				elDialog.className = "alertify alertify-" + type + " " + css;
-				elCover.className = "alertify-cover";
+				elCover.className  = "alertify-cover";
 				return html;
 			},
 
@@ -330,19 +312,19 @@
 			 *
 			 * @return {undefined}
 			 */
-			close: function(elem, wait) {
+			close : function (elem, wait) {
 				// Unary Plus: +"2" === 2
 				var timer = (wait && !isNaN(wait)) ? +wait : this.delay,
-					self = this,
-					hideElement, transitionDone;
+				    self  = this,
+				    hideElement, transitionDone;
 
 				// set click event on log messages
-				this.bind(elem, "click", function() {
+				this.bind(elem, "click", function () {
 					hideElement(elem);
 				});
 				// Hide the dialog box after transition
 				// This ensure it doens't block any element from being clicked
-				transitionDone = function(event) {
+				transitionDone = function (event) {
 					event.stopPropagation();
 					// unbind event so function only gets called once
 					self.unbind(this, self.transition.type, transitionDone);
@@ -352,7 +334,7 @@
 				};
 				// this sets the hide class to transition out
 				// or removes the child if css transitions aren't supported
-				hideElement = function(el) {
+				hideElement = function (el) {
 					// ensure element exists
 					if (typeof el !== "undefined" && el.parentNode === elLog) {
 						// whether CSS transition exists
@@ -368,9 +350,7 @@
 				// never close (until click) if wait is set to 0
 				if (wait === 0) return;
 				// set timeout to auto close the log message
-				setTimeout(function() {
-					hideElement(elem);
-				}, timer);
+				setTimeout(function () { hideElement(elem); }, timer);
 			},
 
 			/**
@@ -384,14 +364,14 @@
 			 *
 			 * @return {Object}
 			 */
-			dialog: function(message, type, fn, placeholder, cssClass) {
+			dialog : function (message, type, fn, placeholder, cssClass) {
 				// set the current active element
 				// this allows the keyboard focus to be resetted
 				// after the dialog box is closed
 				elCallee = document.activeElement;
 				// check to ensure the alertify dialog element
 				// has been successfully created
-				var check = function() {
+				var check = function () {
 					if ((elLog && elLog.scrollTop !== null) && (elCover && elCover.scrollTop !== null)) return;
 					else check();
 				};
@@ -403,13 +383,7 @@
 				this.init();
 				check();
 
-				queue.push({
-					type: type,
-					message: message,
-					callback: fn,
-					placeholder: placeholder,
-					cssClass: cssClass
-				});
+				queue.push({ type: type, message: message, callback: fn, placeholder: placeholder, cssClass: cssClass });
 				if (!isopen) this.setup();
 
 				return this;
@@ -422,9 +396,9 @@
 			 *
 			 * @return {Function}
 			 */
-			extend: function(type) {
-				if (typeof type !== "string") throw new Error("extend method must have exactly one paramter");
-				return function(message, wait) {
+			extend : function (type) {
+				if (typeof type !== "string") throw new Error("extend method must have exactly one parameter");
+				return function (message, wait) {
 					this.log(message, type, wait);
 					return this;
 				};
@@ -435,18 +409,18 @@
 			 *
 			 * @return {undefined}
 			 */
-			hide: function() {
+			hide : function () {
 				var transitionDone,
-					self = this;
+				    self = this;
 				// remove reference from queue
-				queue.splice(0, 1);
+				queue.splice(0,1);
 				// if items remaining in the queue
 				if (queue.length > 0) this.setup(true);
 				else {
 					isopen = false;
 					// Hide the dialog box after transition
 					// This ensure it doens't block any element from being clicked
-					transitionDone = function(event) {
+					transitionDone = function (event) {
 						event.stopPropagation();
 						// unbind event so function only gets called once
 						self.unbind(elDialog, self.transition.type, transitionDone);
@@ -458,7 +432,7 @@
 					} else {
 						elDialog.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
 					}
-					elCover.className = "alertify-cover alertify-cover-hidden";
+					elCover.className  = "alertify-cover alertify-cover-hidden";
 					// set focus to the last element or body
 					// after the dialog is closed
 					elCallee.focus();
@@ -471,11 +445,8 @@
 			 *
 			 * @return {undefined}
 			 */
-			init: function() {
-				// ensure legacy browsers support html tags
-				document.createElement("div");
-				document.createElement("div");
-				document.createElement("div");
+			init : function () {
+				// ensure legacy browsers support html5 tags
 				document.createElement("div");
 				// cover
 				if ($("alertify-cover") == null) {
@@ -500,68 +471,12 @@
 					elLog.className = "alertify-logs alertify-logs-hidden";
 					document.body.appendChild(elLog);
 				}
-
 				// set tabindex attribute on body element
 				// this allows script to give it focus
 				// after the dialog is closed
 				document.body.setAttribute("tabindex", "0");
 				// set transition type
 				this.transition = getTransitionEvent();
-
-			},
-
-			/**
-			 * plusTip
-			 * 可用于点击某元素时，显示在当前点击元素的上方后，逐渐消失
-			 */
-			plusTip: function(obj, message, wait) {
-				var timer = (wait && !isNaN(wait)) ? +wait : this.delay;
-				//清空plus-log
-				var plusDom = document.getElementById("alertify-plus");
-				jQuery(plusDom).remove();
-
-				//plusTip element
-				if ($("alertify-plus") == null) {
-					elPlus = document.createElement("div");
-					elPlus.setAttribute("id", "alertify-plus");
-					elPlus.className = "alertify-plus";
-					document.body.appendChild(elPlus);
-				}
-
-				elPlus.className = "alertify-plus";
-
-				//tip message
-				var plusLog = document.createElement("div");
-				var arrow = document.createElement("i");
-				plusLog.className = "plus-log";
-				arrow.className = "arrow";
-				plusLog.innerHTML = message;
-				elPlus.appendChild(plusLog);
-				plusLog.appendChild(arrow);
-
-				//点击对象的位置
-				var objTop = obj.offsetTop,
-					objLeft = obj.offsetLeft;
-				var objWidth = obj.offsetWidth,
-					objHeight = obj.offsetHeight;
-				while (obj = obj.offsetParent) {
-					objTop += obj.offsetTop;
-					objLeft += obj.offsetLeft;
-				}
-
-				_alertify.setStyle(plusLog, {
-					top: (objTop - objHeight - 12) + "px",
-					left: objLeft + "px"
-				});
-
-				//remove plusTip
-				setTimeout(function() {
-					plusLog.className += " fadeOutUp animated";
-					setTimeout(function() {
-						jQuery(elPlus).remove();
-					}, 1000);
-				}, timer);
-
 			},
 
 			/**
@@ -573,10 +488,10 @@
 			 *
 			 * @return {Object}
 			 */
-			log: function(message, type, wait) {
+			log : function (message, type, wait) {
 				// check to ensure the alertify dialog element
 				// has been successfully created
-				var check = function() {
+				var check = function () {
 					if (elLog && elLog.scrollTop !== null) return;
 					else check();
 				};
@@ -600,24 +515,15 @@
 			 *
 			 * @return {undefined}
 			 */
-			notify: function(message, type, wait) {
-
-				//清除当前内容				
+			notify : function (message, type, wait) {
 				var log = document.createElement("div");
 				log.className = "alertify-log" + ((typeof type === "string" && type !== "") ? " alertify-log-" + type : "");
-				log.innerHTML = "<div class=\"alertify-log-wrap\"><div class=\"alertify-log-content\"><i class=\"alertify-icon\"></i><button id=\"close-alertify\" type=\"button\">×</button>" + message + "</div></div>";
+				log.innerHTML = message;
 				// append child
 				elLog.appendChild(log);
 				// triggers the CSS animation
-				setTimeout(function() {
-					log.className = log.className + " alertify-log-show";
-				}, 50);
+				setTimeout(function() { log.className = log.className + " alertify-log-show"; }, 50);
 				this.close(log, wait);
-
-				//调用位置计算
-				_alertify.position();
-				_alertify.resizePosition();
-
 			},
 
 			/**
@@ -627,7 +533,7 @@
 			 *
 			 * @return {undefined}
 			 */
-			set: function(args) {
+			set : function (args) {
 				var k;
 				// error catching
 				if (typeof args !== "object" && args instanceof Array) throw new Error("args must be an object");
@@ -644,11 +550,12 @@
 			 *
 			 * @return {undefined}
 			 */
-			setFocus: function() {
+			setFocus : function () {
 				if (input) {
 					input.focus();
 					input.select();
-				} else btnFocus.focus();
+				}
+				else btnFocus.focus();
 			},
 
 			/**
@@ -656,15 +563,15 @@
 			 *
 			 * @return {undefined}
 			 */
-			setup: function(fromQueue) {
+			setup : function (fromQueue) {
 				var item = queue[0],
-					self = this,
-					transitionDone;
+				    self = this,
+				    transitionDone;
 
 				// dialog is open
 				isopen = true;
 				// Set button focus after transition
-				transitionDone = function(event) {
+				transitionDone = function (event) {
 					event.stopPropagation();
 					self.setFocus();
 					// unbind event so function only gets called once
@@ -677,64 +584,17 @@
 				// build the proper dialog HTML
 				elDialog.innerHTML = this.build(item);
 				// assign all the common elements
-				btnReset = $("alertify-resetFocus");
-				btnResetBack = $("alertify-resetFocusBack");
-				btnOK = $("alertify-ok") || undefined;
+				btnReset  = $("alertify-resetFocus");
+				btnResetBack  = $("alertify-resetFocusBack");
+				btnOK     = $("alertify-ok")     || undefined;
 				btnCancel = $("alertify-cancel") || undefined;
-				btnClose = $("close-alertify") || undefined;
-				btnFocus = (_alertify.buttonFocus === "cancel") ? btnCancel : ((_alertify.buttonFocus === "none") ? $("alertify-noneFocus") : btnOK),
-					input = $("alertify-prompt-input") || undefined;
-				form = $("alertify-form") || undefined;
+				btnFocus  = (_alertify.buttonFocus === "cancel") ? btnCancel : ((_alertify.buttonFocus === "none") ? $("alertify-noneFocus") : btnOK),
+				input     = $("alertify-text")   || undefined;
+				form      = $("alertify-form")   || undefined;
 				// add placeholder value to the input field
 				if (typeof item.placeholder === "string" && item.placeholder !== "") input.value = item.placeholder;
-				self.setFocus();
+				if (fromQueue) this.setFocus();
 				this.addListeners(item.callback);
-
-				//调用位置计算
-				_alertify.position();
-				_alertify.resizePosition();
-			},
-
-			/**
-			 * 位置计算
-			 */
-			position: function() {
-				var windowWidth = document.documentElement.clientWidth,
-					windowHeight = document.documentElement.clientHeight;
-
-				var dialogTopPos = (windowHeight - elDialog.offsetHeight) / 2,
-					dialogLeftPos = (windowWidth - elDialog.offsetWidth) / 2;
-
-				var elLogTopPos = (windowHeight - elLog.offsetHeight) / 2,
-					elLogLeftPos = (windowWidth - elLog.offsetWidth) / 2;
-
-				_alertify.setStyle(elDialog, {
-					top: dialogTopPos + "px",
-					left: dialogLeftPos + "px"
-				});
-				_alertify.setStyle(elLog, {
-					top: elLogTopPos + "px",
-					left: elLogLeftPos + "px"
-				});
-
-				//console.log(elDialog.offsetHeight)
-
-			},
-
-			//resize position
-			resizePosition: function() {
-				window.onresize = function() {
-					_alertify.position();
-				};
-			},
-
-			/**
-			 * 给元素添加多个style函数
-			 */
-			setStyle: function(obj, css) {
-				for (var atr in css) {
-					obj.style[atr] = css[atr];
-				}
 			},
 
 			/**
@@ -746,7 +606,7 @@
 			 *
 			 * @return {undefined}
 			 */
-			unbind: function(el, event, fn) {
+			unbind : function (el, event, fn) {
 				if (typeof el.removeEventListener === "function") {
 					el.removeEventListener(event, fn, false);
 				} else if (el.detachEvent) {
@@ -756,53 +616,23 @@
 		};
 
 		return {
-			alert: function(message, fn, cssClass) {
-				_alertify.dialog(message, "alert", fn, "", cssClass);
-				return this;
-			},
-			confirm: function(message, fn, cssClass) {
-				_alertify.dialog(message, "confirm", fn, "", cssClass);
-				return this;
-			},
-			extend: _alertify.extend,
-			init: _alertify.init,
-			log: function(message, type, wait) {
-				_alertify.log(message, type, wait);
-				return this;
-			},
-			prompt: function(message, fn, placeholder, cssClass) {
-				_alertify.dialog(message, "prompt", fn, placeholder, cssClass);
-				return this;
-			},
-			success: function(message, wait) {
-				_alertify.log(message, "success", wait);
-				return this;
-			},
-			error: function(message, wait) {
-				_alertify.log(message, "error", wait);
-				return this;
-			},
-			warning: function(message, wait) {
-				_alertify.log(message, "warning", wait);
-				return this;
-			},
-			plusTip: function(obj, message, wait) {
-				_alertify.plusTip(obj, message, wait);
-				return this;
-			},
-			set: function(args) {
-				_alertify.set(args);
-			},
-			labels: _alertify.labels,
-			debug: _alertify.handleErrors
+			alert   : function (message, fn, cssClass) { _alertify.dialog(message, "alert", fn, "", cssClass); return this; },
+			confirm : function (message, fn, cssClass) { _alertify.dialog(message, "confirm", fn, "", cssClass); return this; },
+			extend  : _alertify.extend,
+			init    : _alertify.init,
+			log     : function (message, type, wait) { _alertify.log(message, type, wait); return this; },
+			prompt  : function (message, fn, placeholder, cssClass) { _alertify.dialog(message, "prompt", fn, placeholder, cssClass); return this; },
+			success : function (message, wait) { _alertify.log(message, "success", wait); return this; },
+			error   : function (message, wait) { _alertify.log(message, "error", wait); return this; },
+			set     : function (args) { _alertify.set(args); },
+			labels  : _alertify.labels,
+			debug   : _alertify.handleErrors
 		};
 	};
 
 	// AMD and window support
 	if (typeof define === "function") {
-		define([], function() {
-			return new Alertify();
-		});
+		define([], function () { return new Alertify(); });
 	} else if (typeof global.alertify === "undefined") {
 		global.alertify = new Alertify();
 	}
@@ -821,7 +651,6 @@ function alertifyReset() {
 			cancel: "取消"
 		},
 		buttonReverse: false,
-		buttonFocus: "none",
-		closeButtonShow: true
+		buttonFocus: "none"
 	});
-}
+};
