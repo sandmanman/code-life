@@ -27,7 +27,7 @@
 		<a href="#" id="notification">默认提示</a><br>
 		<a href="#" id="success">操作成功</a><br>
 		<a href="#" id="error">失败错误提示</a><br>
-		<a href="#" id="delay">自定义消失时间，10S后自动消失（默认1.5S）</a><br>
+		<a href="#" id="delay">自定义消失时间，15S后自动消失（默认1.5S）</a><br>
 		<a href="#" id="forever">点我就消失</a>
 
 	</section>
@@ -95,13 +95,13 @@
 		// Custom Properties
 		$("#delay").on( 'click', function () {
 			alertifyReset();
-			alertify.log("10s后消失", "", 10000);
+			alertify.log("15s后消失", "", 15000);
 			return false;
 		});
 
 		$("#forever").on( 'click', function () {
 			alertifyReset();
-			alertify.log("点我就消失点我就消失点我就消失点我就消失点我就消失", "", 0);
+			alertify.error("点我就消失点我就消失点我就消失点我就消失点我就消失", 0);
 			return false;
 		});
 

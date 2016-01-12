@@ -105,7 +105,7 @@
 			 * Delay number
 			 * @type {Number}
 			 */
-			delay : 5000,
+			delay : 1500,
 
 			/**
 			 * Whether buttons are reversed (default is secondary/primary)
