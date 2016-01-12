@@ -18,12 +18,9 @@ var mac = ua.indexOf('mac os x')!=-1
 ```javascript
 var isIDevicePhone = (/iphone|ipod/gi).test(navigator.platform);
 var isIDeviceIpad = !isIDevicePhone && (/ipad/gi).test(navigator.platform);
-				
 var isIDevice = isIDevicePhone || isIDeviceIpad;
-				
 var isAndroid = !isIDevice && (/android/gi).test(navigator.userAgent);
 var isIEMobile = !isIDevice && !isAndroid && (/IEMobile/gi).test(navigator.userAgent);
-				
 var redirect = function() {
 	if(isIDevice){
 		var msg = isIDeviceIpad ? "检测到您正在使用iPad, 是否直接前往AppStore下载?" : "检测到您正在使用iPhone, 是否直接前往AppStore下载?";
@@ -56,7 +53,9 @@ var redirect = function() {
 redirect();
 ```
 
-###CSS Rem 使用
+-------------------------------------------------------------------------------
+
+###CSS Rem
 ```css
 html { font-size: 62.5%; } 
 body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
