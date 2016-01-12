@@ -3,7 +3,7 @@
 前端代码摘抄
 
 ###项目规范
-<a href="https://github.com/ecomfe/spec" target="_blank">项目规范</a>
+<a href="http://alloyteam.github.io/CodeGuide/" target="_blank">项目规范</a>
 ###jQuery插件开发模板
 ```javascript
 // 这个分号的作用是防止和其他jquery插件合并时，别人不规范的jquery插件忘记使用分号结束
