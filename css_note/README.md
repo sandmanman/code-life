@@ -9,15 +9,21 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
 
 ####CSS高消耗属性
 
-box-shadows,
-border-radius,
-transparency,
-transforms,
-CSS filters（性能杀手）
+```css
+box-shadows
+
+border-radius
+
+transparency
+
+transforms
+
+CSS filters /* 性能杀手 */
+```
 
 ####CSS换行
 
-*强制换行
+* 强制换行
 
 ```css
 word-break: break-all; /* 只对英文起作用，以字母作为换行依据 */
@@ -25,7 +31,7 @@ word-wrap: break-word; /* 只对英文起作用，以单词作为换行依据 */
 white-space: pre-wrap; /* 只对中文起作用，强制换行 */
 ```
 
-*禁止换行
+* 禁止换行
 ```css
 white-space:nowrap;
 overflow:hidden;
