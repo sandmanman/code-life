@@ -146,21 +146,21 @@ text-overflow:ellipsis; /* 超出的内容以...来表示 */
 
 ###CSS3 Media Queries
 ```css
-//For Small Desktop
+/* For Small Desktop */
 @media (min-width: 980px) and (max-width: 1150px) {}
 ```
 
 ```css
-//Tablet (Portrait) Design for a width of 768px
+/* Tablet (Portrait) Design for a width of 768px */
 @media (min-width: 768px) and (max-width: 979px) {}
 ```
 
 ```css
-//Mobile (Portrait) Design for a width of 320px
+/* Mobile (Portrait) Design for a width of 320px */
 @media only screen and (max-width: 767px)  {}
 ```
 
 ```css
-//Mobile (Landscape) Design for a width of 480px
+/* Mobile (Landscape) Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 ```
