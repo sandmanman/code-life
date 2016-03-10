@@ -7,7 +7,7 @@ body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
 h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
 ```
 
-####CSS高消耗属性
+####高消耗属性
 
 ```css
 box-shadows
@@ -18,10 +18,10 @@ transparency
 
 transforms
 
-CSS filters /* 性能杀手 */
+filters /* 性能杀手 */
 ```
 
-####CSS换行
+####换行
 
 * 强制换行
 
