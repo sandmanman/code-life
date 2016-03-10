@@ -1,4 +1,6 @@
-####CSS Rem
+#CSS Note
+
+####Rem
 ```css
 html { font-size: 62.5%; } 
 body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
@@ -30,7 +32,7 @@ overflow:hidden;
 text-overflow:ellipsis; /* 超出的内容以...来表示 */
 ```
 
-####CSS3 Media Queries
+####Media Queries
 ```css
 /* For Small Desktop */
 @media (min-width: 980px) and (max-width: 1150px) {}

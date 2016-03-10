@@ -1,3 +1,5 @@
+#jQuery Note
+
 ####jQuery插件开发模板
 
 ```javascript

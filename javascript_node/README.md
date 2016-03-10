@@ -1,3 +1,5 @@
+#javaScript Note
+
 ###浏览器版本判断
 ```javascript
 var ua = navigator.userAgent.toLowerCase();
