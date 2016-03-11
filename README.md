@@ -3,8 +3,6 @@
 #### 项目规范
 <a href="http://alloyteam.github.io/CodeGuide/" target="_blank">CodeGuide</a>
 
-<a href="https://github.com/ecomfe/spec/blob/master/directory.md" target="_blank">目录规范参考</a>
-
 #### blog
 <a href="http://www.ruanyifeng.com/blog">阮一峰</a>
 
