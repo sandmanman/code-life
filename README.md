@@ -26,10 +26,12 @@
 
 <a href="https://github.com/h5bp/html5-boilerplate">html5-boilerplate</a>HTML5模版
 
-#### 移动框架
+#### 移动端
 <a href="http://frozenui.github.io/">Frozen UI</a>
 
 <a href="https://github.com/fex-team/GMU">GMU</a>
+
+<a href="https://github.com/amfe/lib-flexible">lib-flexible移动端自适应方案</a>
 
 #### CSS在线工具
 <a href="http://linxz.github.io/tianyizone/">CSS小工具集合</a>
