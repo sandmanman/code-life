@@ -22,9 +22,9 @@
 
 <a href="http://getuikit.com/">UI KIT</a>
 
-<a href="https://github.com/aralejs/aralejs.org/">aralejs</a>
+<a href="https://github.com/h5bp/html5-boilerplate">html5-boilerplate</a>
 
-<a href="https://github.com/h5bp/html5-boilerplate">html5-boilerplate</a>HTML5模版
+<a href="https://github.com/aralejs/aralejs.org/">aralejs</a>
 
 #### 移动端
 <a href="http://frozenui.github.io/">Frozen UI</a>
@@ -32,6 +32,8 @@
 <a href="https://github.com/fex-team/GMU">GMU</a>
 
 <a href="https://github.com/amfe/lib-flexible">lib-flexible移动端自适应方案</a>
+
+<a href="https://github.com/doyoe/trip">移动前端开发经验指南</a>
 
 #### CSS在线工具
 <a href="http://linxz.github.io/tianyizone/">CSS小工具集合</a>
@@ -62,12 +64,3 @@
 <a href="http://fredsarmento.me/frontend-tools/">frontend-tools</a>
 
 <a href="http://alloyteam.github.io/AlloyDesigner/">AlloyDesigner</a>对比设计图
-
-### Sublime Text3
-<a href="https://github.com/spadgos/sublime-jsdocs">sublime-jsdocs</a>注释插件
-
-<a href="https://github.com/kemayo/sublime-text-git">sublime-text-git</a>Git
-
-<a href="https://github.com/allanhortle/Centurion">Centurion</a>主题
-
-<a href="https://github.com/kkga/spacegray">spacegray</a>主题
