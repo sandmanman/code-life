@@ -1,8 +1,8 @@
 #CSS Note
 
-####Rem
+####rem
 ```css
-html { font-size: 62.5%; } 
+html { font-size: 62.5%; }
 body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
 h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
 ```
@@ -57,4 +57,24 @@ text-overflow:ellipsis; /* 超出的内容以...来表示 */
 ```css
 /* Mobile (Landscape) Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
+```
+
+####字体设置
+```css
+/*声明 WebFont*/
+@font-face {
+  font-family: 'pinghei';
+  src: url('../font/pinghei.eot');
+  src:
+    url('../font/pinghei.eot?#font-spider') format('embedded-opentype'),
+    url('../font/pinghei.woff') format('woff'),
+    url('../font/pinghei.ttf') format('truetype'),
+    url('../font/pinghei.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*使用指定字体*/
+.demo {
+  font-family: 'pinghei';
+}
 ```
