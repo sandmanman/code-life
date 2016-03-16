@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>progress wheel</title>
+    <style media="screen">
+    @-webkit-keyframes toggle {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes toggle {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    .progress-wheel {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      height: 160px;
+      width: 160px;
+    }
+    .progress-wheel div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 160px;
+      width: 160px;
+      /* 圆环宽高，可自定义 */
+      border: 16px solid transparent;
+      border-radius: 50%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .progress-wheel .progress-left,
+    .progress-wheel .progress-right,
+    .progress-wheel .progress-cover {
+      /*clip: rect(0 160px 80px 0);*/
+      clip: rect(80px 160px auto auto);
+      /* rect( [0 | <width/2> | <height> | 0] ) */
+    }
+    .progress-wheel .progress-right {
+      opacity: 0;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    .progress-wheel .progress-text {
+      border: none;
+      text-align: center;
+      font-size: 32.5px;
+      color: #949494;
+      /* 进度文字颜色 */
+      line-height: 160px;
+    }
+    .progress-wheel .progress-percent {
+      font-size: .55em;
+    }
+    /* color */
+    .progress-track {
+      border-color: rgb(240, 240, 240) !important;
+    }
+    .progress-left {
+      border-color: rgb(110, 200, 78) !important;
+      transform: rotate(20deg);
+      transition: -webkit-transform 1500ms linear;
+    }
+    .progress-right {
+      border-color: rgb(110, 200, 78) !important;
+    }
+    .progress-cover {
+      border-color: rgb(240, 240, 240) !important;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="progress-wheel">
+      <div class="progress-track"></div>
+      <div class="progress-left"></div>
+      <div class="progress-right"></div>
+      <div class="progress-cover"></div>
+      <div class="progress-text"><span class="progress-num">20</span></div>
+    </div>
+  </body>
+</html>
