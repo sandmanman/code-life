@@ -57,10 +57,20 @@
 #### 有用的
 <a href="https://github.com/leeethe/fex-edu">FEX学院</a>
 
-<a href="https://github.com/ele828/react-native-guide">React-Native学习指南</a>
-
 <a href="http://f2er.club/">醉牛前端</a>
 
 <a href="http://fredsarmento.me/frontend-tools/">frontend-tools</a>
 
 <a href="http://alloyteam.github.io/AlloyDesigner/">AlloyDesigner</a>对比设计图
+
+#### jQuery插件
+* 自适应slide
+
+<a href="https://github.com/jedrzejchalubek/Glide.js">Glide</a>轻量简单
+
+<a href="https://github.com/metafizzy/flickity">Flickity</a>
+
+<a href="https://github.com/smashingboxes/OwlCarousel2">Owl Carousel</a>
+
+* jQuery Circle Statistics
+<a href="https://github.com/pguso/jquery-plugin-circliful">jQuery circle statitic</a>
