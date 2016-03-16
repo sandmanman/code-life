@@ -78,3 +78,12 @@ text-overflow:ellipsis; /* 超出的内容以...来表示 */
   font-family: 'pinghei';
 }
 ```
+* 单独设置字体
+```css
+h1 { font-family: Arial, serif; } /* 系统字体 */
+.fontsloaded h1 { font-family:  'MySpecialFont', serif; } /* 自定义字体 */
+```
+
+```html
+<link href="font.css" onload="document.body.className+=' fontsloaded';" rel="stylesheet" type="text/css" >
+```
