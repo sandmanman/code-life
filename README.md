@@ -73,4 +73,5 @@
 <a href="https://github.com/smashingboxes/OwlCarousel2">Owl Carousel</a>
 
 * jQuery Circle Statistics
+
 <a href="https://github.com/pguso/jquery-plugin-circliful">jQuery circle statitic</a>
