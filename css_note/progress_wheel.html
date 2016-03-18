@@ -19,8 +19,8 @@
       height: 160px;
       width: 160px;
     }
-    .progress-wheel:before,
-    .progress-wheel:after {
+    .progress-wheel .sp,
+    .progress-wheel .ep {
       content: '';
       position: absolute;
       left: 50%;
@@ -31,12 +31,12 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: rgb(110, 200, 78);
+      background-color: #f1bc00;
     }
-    .progress-wheel:before {
+    .progress-wheel .sp {
       transform: translate(-72px, 0);
     }
-    .progress-wheel:after {
+    .progress-wheel .ep {
       transform: rotate(20deg) translate(-72px, 0);
       transition: -webkit-transform 1500ms linear;
     }
@@ -48,7 +48,7 @@
       width: 160px;
       /* 圆环宽高，可自定义 */
       border: 16px solid transparent;
-      border-radius: 50%;
+      border-radius: 100%;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -74,18 +74,18 @@
     }
     /* color */
     .progress-track {
-      border-color: rgb(240, 240, 240) !important;
+      border-color: #2dcad0 !important;
     }
     .progress-left {
-      border-color: rgb(110, 200, 78) !important;
+      border-color: #f1bc00 !important;
       transform: rotate(20deg);
       transition: -webkit-transform 1500ms linear;
     }
     .progress-right {
-      border-color: rgb(110, 200, 78) !important;
+      border-color: #f1bc00 !important;
     }
     .progress-cover {
-      border-color: rgb(240, 240, 240) !important;
+      border-color: #2dcad0 !important;
     }
     </style>
   </head>
@@ -96,6 +96,8 @@
       <div class="progress-right"></div>
       <div class="progress-cover"></div>
       <div class="progress-text"><span class="progress-num">20</span></div>
+      <span class="sp"></span>
+      <span class="ep"></span>
     </div>
   </body>
 </html>

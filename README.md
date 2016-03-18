@@ -41,8 +41,8 @@ Code Life
 
 #### 移动端
 - <a href="http://frozenui.github.io/">Frozen UI</a>
-- <a href="https://github.com/fex- team/GMU">GMU</a>
-- <a href="https://github.com/amfe/lib- flexible">lib- flexible移动端自适应方案</a>
+- <a href="https://github.com/fex-team/GMU">GMU</a>
+- <a href="https://github.com/amfe/lib-flexible">lib- flexible移动端自适应方案</a>
 - <a href="https://github.com/doyoe/trip">移动前端开发经验指南</a>
 
 ===
@@ -52,7 +52,7 @@ Code Life
 
 #### CSS在线工具
 - <a href="http://linxz.github.io/tianyizone/">CSS小工具集合</a>
-- <a href="http://www.cnblogs.com/lhb25/archive/2012/09/27/10- css3- online- generator- tools.html">CSS3 Maker</a>
+- <a href="http://www.cnblogs.com/lhb25/archive/2012/09/27/10-css3-online-generator-tools.html">CSS3 Maker</a>
 - <a href="http://border- radius.com/">Border Radius</a>
 - <a href="http://css3generator.com/">CSS3 Generator</a>
 - <a href="http://westciv.com/tools/gradients/">CSS3 Tool</a>
@@ -80,8 +80,8 @@ Code Life
 - <a href="https://github.com/smashingboxes/OwlCarousel2">Owl Carousel</a>
 
 
-- <a href="https://github.com/pguso/jquery- plugin- circliful">jQuery circle statitic</a> 环形进度
+- <a href="https://github.com/pguso/jquery-plugin-circliful">jQuery circle statitic</a> 环形进度
 
-- <a href="https://github.com/noraesae/perfect- scrollbar">perfect scrollbar</a> 滚动条
+- <a href="https://github.com/noraesae/perfect-scrollbar">perfect scrollbar</a> 滚动条
 
-- <a href="https://github.com/sdecima/javascript- detect- element- resize">javascript- detect- element- resize</a> 监听元素的变化,如高度
+- <a href="https://github.com/sdecima/javascript-detect-element-resize">javascript-detect-element- resize</a> 监听元素的变化,如高度
