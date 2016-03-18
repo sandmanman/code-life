@@ -25,6 +25,8 @@ Code Life
 ### javaScript
 - <a href="http://island205.github.io/HelloSea.js/index.html">Sea.js</a>
 - <a href="http://cn.vuejs.org/">VUE.JS</a>
+- [javascript常用代码收集](https://github.com/jsfront/src/blob/master/js.md)
+- [JavaScript 经典实例收集整理](https://segmentfault.com/a/1190000002559158)
 
 ===
 
@@ -43,6 +45,9 @@ Code Life
 - <a href="https://github.com/doyoe/trip">移动前端开发经验指南</a>
 
 ===
+
+#### CSS
+- [常用代码](https://github.com/jsfront/src/blob/master/css.md)
 
 #### CSS在线工具
 - <a href="http://linxz.github.io/tianyizone/">CSS小工具集合</a>
