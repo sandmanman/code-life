@@ -1,0 +1,51 @@
+/* These are just a test styles - you don't need them in your project */
+html{
+  font-size: 62.5%;
+}
+body {
+    background-color: #444;
+    padding-top: 40px;
+    font: 1.5 Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.page-title {
+    font: 400 40px/1.5 Open Sans, sans-serif;
+    text-align: center;
+}
+
+.circle {
+    width: 260px;
+    height: 140px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle canvas {
+    vertical-align: top;
+}
+
+.circle strong {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 4.6rem;
+}
+
+.circle strong i {
+    font-style: normal;
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+.circle span {
+    display: block;
+    color: #aaa;
+    margin-top: 12px;
+}

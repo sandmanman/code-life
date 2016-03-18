@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>percentage-loader</title>
+    <style media="screen">
+    #topLoader {
+      width: 256px;
+      height: 256px;
+      margin-bottom: 32px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="topLoader"></div>
+    <button id="testButton">TEST</button>
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.percentageloader.js"></script>
+    <script>
+   $(function() {
+     var $topLoader = $("#topLoader").percentageLoader({
+       width: 256,
+       height: 256,
+       controllable : true,
+       progress : 0.5,
+       onProgressUpdate : function(val) {
+         $topLoader.setValue(Math.round(val * 100.0));
+       }
+     });
+
+     var topLoaderRunning = false;
+     $("#testButton").click(function() {
+       if (topLoaderRunning) {
+         return;
+       }
+       topLoaderRunning = true;
+       $topLoader.setProgress(0);
+       $topLoader.setValue('0');
+       var kb = 0;
+       var totalKb = 999;
+
+       var animateFunc = function() {
+         kb += 17;
+         $topLoader.setProgress(kb / totalKb);
+         $topLoader.setValue(kb.toString() + 'kb');
+
+         if (kb < totalKb) {
+           setTimeout(animateFunc, 25);
+         } else {
+           topLoaderRunning = false;
+         }
+       }
+
+       setTimeout(animateFunc, 25);
+
+     });
+   });
+  </script>
+  </body>
+</html>
