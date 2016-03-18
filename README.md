@@ -5,12 +5,14 @@ Code Life
 
 ===
 
-#### blog
+#### 博客
 - [张鑫旭](http://www.zhangxinxu.com/wordpress/)
 - [阮一峰](http://www.ruanyifeng.com/blog)
 - [fouber前端文章](https://github.com/fouber/blog)
 - [白色橡树](http://www.cnblogs.com/PeunZhang/)
 - [CSS森林](http://blog.cssforest.org/)
+- [前端观察](https://www.qianduan.net/)
+- [W3Cplus](http://www.w3cplus.com/)
 
 ===
 
