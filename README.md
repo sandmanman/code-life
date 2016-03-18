@@ -1,7 +1,7 @@
 #Code Life
 
 #### 项目规范
-<a href="http://alloyteam.github.io/CodeGuide/" target="_blank">CodeGuide</a>
+<a href="http://alloyteam.github.io/CodeGuide/">CodeGuide</a>
 
 #### blog
 <a href="http://www.ruanyifeng.com/blog">阮一峰</a>
@@ -61,17 +61,21 @@
 
 <a href="http://fredsarmento.me/frontend-tools/">frontend-tools</a>
 
-<a href="http://alloyteam.github.io/AlloyDesigner/">AlloyDesigner</a>对比设计图
+<a href="http://alloyteam.github.io/AlloyDesigner/">AlloyDesigner</a> 对比设计图
 
 #### jQuery插件
-* 自适应slide
+#####自适应轮播
 
-<a href="https://github.com/jedrzejchalubek/Glide.js">Glide</a>轻量简单
+<a href="https://github.com/jedrzejchalubek/Glide.js">Glide</a> 轻量简单
 
 <a href="https://github.com/metafizzy/flickity">Flickity</a>
 
 <a href="https://github.com/smashingboxes/OwlCarousel2">Owl Carousel</a>
 
-* jQuery Circle Statistics
+---
 
-<a href="https://github.com/pguso/jquery-plugin-circliful">jQuery circle statitic</a>
+<a href="https://github.com/pguso/jquery-plugin-circliful">jQuery circle statitic</a> 环形进度
+
+---
+
+<a href="https://github.com/noraesae/perfect-scrollbar">perfect scrollbar</a> 滚动条
