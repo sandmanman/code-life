@@ -18,7 +18,8 @@ Code Life
 
 ### 教程
 - <a href="http://www.runoob.com/">菜鸟教程</a>
-- <a href="https://laravist.com/series/vue- js- 1- 0- in- action- series">Vue.js1.0</a>
+- <a href="https://laravist.com/series/vue-js-1-0-in-action-series">Vue.js1.0视频教程</a>
+- [VueJs资源聚合](https://github.com/jsfront/src/blob/master/vuejs.md)
 
 ===
 
