@@ -1,11 +1,23 @@
 #CSS Note
 
-####rem
+####Less rem
 ```css
-html { font-size: 62.5%; }
-body { font-size: 14px; font-size: 1.4rem; } /* =14px 兼容低版本IE */
-h1   { font-size: 24px; font-size: 2.4rem; } /* =24px 兼容低版本IE */
+// 定义一个变量和一个mixin
+@baseFontSize: 75;//基于视觉稿横屏尺寸/100得出的基准font-size
+.px2rem(@name, @px){
+  @{name}: @px / @baseFontSize * 1rem;
+}
+// 使用示例
+.container {
+  .px2rem(height, 240);
+}
+// less编译结果
+.container {
+  height: 3.2rem;
+}
 ```
+
+===
 
 ####高消耗属性
 
@@ -20,6 +32,8 @@ transforms
 
 filters /* 性能杀手 */
 ```
+
+===
 
 ####换行
 
@@ -37,6 +51,8 @@ white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis; /* 超出的内容以...来表示 */
 ```
+
+===
 
 ####Media Queries
 ```css
@@ -58,6 +74,8 @@ text-overflow:ellipsis; /* 超出的内容以...来表示 */
 /* Mobile (Landscape) Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 ```
+
+===
 
 ####字体设置
 ```css
