@@ -6,12 +6,6 @@
 /[^\x00-\xff]/
 ```
 
-**匹配双字节字符**
-```javascript
-// 匹配双字节字符(包括汉字在内)
-/[^\x00-\xff]/
-```
-
 **Email**
 ```javascript
 // Email
