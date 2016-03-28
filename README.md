@@ -50,6 +50,7 @@ Code Life
 #### CSS
 - [常用代码](https://github.com/jsfront/src/blob/master/css.md)
 - [CSS3动画](http://www.minimamente.com/example/magic_animations/)
+- [动画库](http://h5bp.github.io/Effeckt.css/)
 
 #### CSS在线工具
 - <a href="http://linxz.github.io/tianyizone/">CSS小工具集合</a>
