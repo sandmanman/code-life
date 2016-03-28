@@ -1,6 +1,6 @@
-#CSS Note
+# Media Queries
 
-#### Media Queries
+#### Width
 ```css
 /* For Small Desktop */
 @media (min-width: 980px) and (max-width: 1150px) {}
@@ -40,6 +40,7 @@
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+
 }
 
 /* Landscape */
@@ -71,6 +72,7 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+    
 }
 
 /* Landscape */
