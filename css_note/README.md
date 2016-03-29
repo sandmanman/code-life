@@ -2,16 +2,16 @@
 
 ####Less rem
 ```css
-// 定义一个变量和一个mixin
-@baseFontSize: 75;//基于视觉稿横屏尺寸/100得出的基准font-size
+/* 定义一个变量和一个mixin */
+@baseFontSize: 75; /* 基于视觉稿横屏尺寸/100得出的基准font-size */
 .px2rem(@name, @px){
   @{name}: @px / @baseFontSize * 1rem;
 }
-// 使用示例
+/* 使用示例 */
 .container {
   .px2rem(height, 240);
 }
-// less编译结果
+/* less编译结果 */
 .container {
   height: 3.2rem;
 }
