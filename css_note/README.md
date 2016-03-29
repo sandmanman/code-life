@@ -91,3 +91,41 @@ h1 { font-family: Arial, serif; } /* 系统字体 */
 ```html
 <link href="font.css" onload="document.body.className+=' fontsloaded';" rel="stylesheet" type="text/css" >
 ```
+
+===
+
+#### 行高设置
+```css
+/* 来源http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/ */
+/*
+  希望页面基本文字所占据的高度是20px
+  默认字号14px
+  20/14≈1.4285714285714286
+  **在CSS中，行高计算的时候，一定不要向下四舍五入**
+*/
+body {
+  font-size: 14px;
+  line-height: 1.42858;
+}
+```
+
+
+#### 小图标文字对齐的解决方案
+```css
+/* 来源http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/ */
+.icon {
+  display: inline-block;
+  width:20px; height:20px;
+  background: url(delete.png) no-repeat center;
+  white-space:nowrap;
+  letter-spacing: -1em;
+  text-indent: -99em;
+  color: transparent;
+  /* IE7 */
+  *text-indent: 0;
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\3000');
+}
+.icon:before {
+  content: '\3000';
+}
+```
