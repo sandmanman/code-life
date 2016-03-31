@@ -1,10 +1,8 @@
-#jQuery Note
-
-####jQuery插件开发模板
+# jQuery插件开发模板
 
 ```javascript
 // 这个分号的作用是防止和其他jquery插件合并时，别人不规范的jquery插件忘记使用分号结束
-// 影响到我们当前的插件，导致无法运行的问题。 
+// 影响到我们当前的插件，导致无法运行的问题。
 ;(function ( $, window, document, undefined ) {
 
 	// undefined作为形参的目的是因为在es3中undefined是可以被修改的
@@ -26,7 +24,7 @@
 	    this._name = pluginName;
 	    this.init();
 	}
-	
+
 	// 为了避免和原型对象Plugin.prototype的冲突，这地方采用继承原型对象的方法
 	$.extend(Plugin.prototype, {
 	    init: function () {
@@ -38,7 +36,7 @@
 	            // some logic
 	    }
 	});
-	
+
 	// 对构造函数的一个轻量级封装，
 	// 防止产生多个实例
 	$.fn[ pluginName ] = function ( options ) {
@@ -47,7 +45,7 @@
 	                    $.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
 	            }
 	    });
-	
+
 	    // 方便链式调用
 	    return this;
 	};
