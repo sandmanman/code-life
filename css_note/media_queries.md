@@ -72,7 +72,7 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-    
+
 }
 
 /* Landscape */
