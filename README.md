@@ -42,7 +42,7 @@ Code Life
 #### 移动端
 - <a href="http://frozenui.github.io/">Frozen UI</a>
 - <a href="https://github.com/fex-team/GMU">GMU</a>
-- <a href="https://github.com/amfe/lib-flexible">lib- flexible移动端自适应方案</a>
+- <a href="https://github.com/amfe/lib-flexible">lib-flexible移动端自适应方案(rem)</a>
 - <a href="https://github.com/doyoe/trip">移动前端开发经验指南</a>
 
 ===
@@ -76,17 +76,15 @@ Code Life
 #### jQuery插件
 
 **自适应轮播**
+- [Glide](https://github.com/jedrzejchalubek/Glide.js)
+- [Flickity](https://github.com/metafizzy/flickity)
+- [Owl Carousel](https://github.com/smashingboxes/OwlCarousel2)
+- [Swiper](https://github.com/nolimits4web/Swiper)
 
-- <a href="https://github.com/jedrzejchalubek/Glide.js">Glide</a> 轻量简单
-- <a href="https://github.com/metafizzy/flickity">Flickity</a>
-- <a href="https://github.com/smashingboxes/OwlCarousel2">Owl Carousel</a>
 
-
-- <a href="https://github.com/pguso/jquery-plugin-circliful">jQuery circle statitic</a> 环形进度
-
-- <a href="https://github.com/noraesae/perfect-scrollbar">perfect scrollbar</a> 滚动条
-
-- <a href="https://github.com/sdecima/javascript-detect-element-resize">javascript-detect-element- resize</a> 监听元素的变化,如高度
+- [circle statitic](https://github.com/pguso/jquery-plugin-circliful)环形进度条
+- [perfect scrollbar](https://github.com/noraesae/perfect-scrollbar)滚动条
+- [detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize)监听元素的变化,如高度
 
 
 #### Status codes
