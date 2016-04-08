@@ -1,9 +1,9 @@
-#CSS Note
+# CSS Note
 
-####Less rem
+#### Less rem
 ```css
 /* 定义一个变量和一个mixin */
-@baseFontSize: 75; /* 基于视觉稿横屏尺寸/100得出的基准font-size */
+@baseFontSize: 75; /* 基于视觉稿横屏尺寸/100得出的基准font-size (这里是750px)*/
 .px2rem(@name, @px){
   @{name}: @px / @baseFontSize * 1rem;
 }
@@ -11,15 +11,11 @@
 .container {
   .px2rem(height, 240);
 }
-/* less编译结果 */
-.container {
-  height: 3.2rem;
-}
 ```
 
 ===
 
-####高消耗属性
+#### 高消耗属性
 
 ```css
 box-shadows
@@ -35,9 +31,9 @@ filters /* 性能杀手 */
 
 ===
 
-####换行
+#### 换行
 
-* 强制换行
+**强制换行**
 
 ```css
 word-break: break-all; /* 只对英文起作用，以字母作为换行依据 */
@@ -45,7 +41,7 @@ word-wrap: break-word; /* 只对英文起作用，以单词作为换行依据 */
 white-space: pre-wrap; /* 只对中文起作用，强制换行 */
 ```
 
-* 禁止换行
+**禁止换行**
 ```css
 white-space:nowrap;
 overflow:hidden;
@@ -65,7 +61,7 @@ input:-ms-clear{
 
 #### 字体设置
 ```css
-/*声明 WebFont*/
+/* 声明 WebFont */
 @font-face {
   font-family: 'pinghei';
   src: url('../font/pinghei.eot');
@@ -77,7 +73,7 @@ input:-ms-clear{
   font-weight: normal;
   font-style: normal;
 }
-/*使用指定字体*/
+/* 使用指定字体 */
 .demo {
   font-family: 'pinghei';
 }
@@ -96,7 +92,7 @@ h1 { font-family: Arial, serif; } /* 系统字体 */
 
 #### 行高设置
 ```css
-/* 来源http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/ */
+/* http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px */
 /*
   希望页面基本文字所占据的高度是20px
   默认字号14px
@@ -112,10 +108,11 @@ body {
 
 #### 小图标文字对齐的解决方案
 ```css
-/* 来源http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/ */
+/* http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px */
 .icon {
   display: inline-block;
-  width:20px; height:20px;
+  width:20px;
+  height:20px;
   background: url(delete.png) no-repeat center;
   white-space:nowrap;
   letter-spacing: -1em;
