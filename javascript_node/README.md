@@ -193,6 +193,59 @@ request.open('GET', '/api/categories');
 request.send();
 ```
 
+#### 数组去重函数
+```javascript
+Array.prototype.delrep = function(fun) {
+    if(!fun) {
+        fun = function(d) {return d;};
+    }
+    var newArr = [];
+    this.sort(function(a, b) {
+        return fun(a) > fun(b) ? -1 : 1;
+    });
+    newArr.push(this[0]);
+    this.forEach(function(d) {
+        if(fun(d) != fun(newArr[0])) {
+            newArr.unshift(d);
+        }
+    });
+    return newArr;
+};
+
+// 对于基本类型数组
+// 来源https://segmentfault.com/a/1190000000437452
+[1,2,3,4,5,5,6,6,5].delrep(); //输出[1, 2, 3, 4, 5, 6]
+
+// 对于对象数组
+var data = [
+    {
+        name: "aaa",
+        value: 123
+    },
+    {
+        name: "bbb",
+        value: 234
+    },
+    {
+        name: "aaa",
+        value: 789
+    }
+];
+console.log(data2.delrep(function(d) {return d.name;}));
+//输出
+[
+	{
+	    name: "bbb",
+	    value: 234
+	},
+	{
+	    name: "aaa",
+	    value: 789
+	}
+];
+```
+
+
 ####:hover伪类在移动端二次点击的问题
 ```javascript
 // 在PC端中,默认链接颜色是红色， hover的时候，链接颜色是蓝色，点击一次跳转
