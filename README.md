@@ -1,7 +1,12 @@
 Code Life
 ===
 #### 项目规范
-- <a href="http://alloyteam.github.io/CodeGuide/">CodeGuide</a>
+- [CodeGuide](http://alloyteam.github.io/CodeGuide/)
+
+===
+
+#### 百度前端技术体系
+- [EFE](http://efe.baidu.com/)
 
 ===
 
@@ -17,33 +22,41 @@ Code Life
 ===
 
 ### 教程
-- <a href="http://www.runoob.com/">菜鸟教程</a>
-- <a href="https://laravist.com/series/vue-js-1-0-in-action-series">Vue.js1.0视频教程</a>
+- [菜鸟教程](http://www.runoob.com/)
+- [Vue.js1.0视频教程](https://laravist.com/series/vue-js-1-0-in-action-series)
 - [VueJs资源聚合](https://github.com/jsfront/src/blob/master/vuejs.md)
 
 ===
 
 ### javaScript
-- <a href="http://island205.github.io/HelloSea.js/index.html">Sea.js</a>
-- <a href="http://cn.vuejs.org/">VUE.JS</a>
+- [Sea.js](http://island205.github.io/HelloSea.js/index.html)
+- [VUE.JS](http://cn.vuejs.org/)
+
 - [javascript常用代码收集](https://github.com/jsfront/src/blob/master/js.md)
 - [JavaScript 经典实例收集整理](https://segmentfault.com/a/1190000002559158)
 
 ===
 
-#### 牛逼的框架
+#### 框架库
 - <a href="http://www.foundcss.com/">Foundation</a>
 - <a href="http://getuikit.com/">UI KIT</a>
-- <a href="https://github.com/h5bp/html5- boilerplate">html5- boilerplate</a>
 - <a href="https://github.com/aralejs/aralejs.org/">aralejs</a>
 
 ===
 
+### HTML5模版
+- [html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
+
+===
+
 #### 移动端
-- <a href="http://frozenui.github.io/">Frozen UI</a>
-- <a href="https://github.com/fex-team/GMU">GMU</a>
-- <a href="https://github.com/amfe/lib-flexible">lib-flexible移动端自适应方案(rem)</a>
-- <a href="https://github.com/doyoe/trip">移动前端开发经验指南</a>
+- [Frozen UI](http://frozenui.github.io/)
+- [GMU](https://github.com/fex-team/GMU)
+- [vux](https://github.com/airyland/vux) vue weui
+
+- [lib-flexible移动端自适应方案(rem)](https://github.com/amfe/lib-flexible)
+- [移动前端开发经验指南](https://github.com/doyoe/trip)
+- [iOS与Android平台上问题列表](https://github.com/AlloyTeam/Mars/tree/master/issues)
 
 ===
 
