@@ -86,7 +86,7 @@ Code Life
 
 ===
 
-#### jQuery插件
+#### javaScript资源
 
 **自适应轮播**
 - [Glide](https://github.com/jedrzejchalubek/Glide.js)
@@ -100,6 +100,8 @@ Code Life
 - [detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize)监听元素的变化,如高度
 
 - [Picturefill](https://github.com/scottjehl/picturefill)图片自适应
+
+- [资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
 
 
 #### Status codes
