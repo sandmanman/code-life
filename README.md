@@ -8,6 +8,9 @@ Code Life
 #### 百度前端技术体系
 - [EFE](http://efe.baidu.com/)
 
+#### 前端开发指南
+- [Front-End-Develop-Guide](https://github.com/icepy/Front-End-Develop-Guide)
+
 ===
 
 #### 博客
