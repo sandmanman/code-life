@@ -52,6 +52,8 @@ Code Life
 #### 移动端
 - [Frozen UI](http://frozenui.github.io/)
 - [GMU](https://github.com/fex-team/GMU)
+- [SUI-Mobile](https://github.com/sdc-alibaba/SUI-Mobile)
+
 - [vux](https://github.com/airyland/vux) vue weui
 
 - [lib-flexible移动端自适应方案(rem)](https://github.com/amfe/lib-flexible)
@@ -98,6 +100,8 @@ Code Life
 - [circle statitic](https://github.com/pguso/jquery-plugin-circliful)环形进度条
 - [perfect scrollbar](https://github.com/noraesae/perfect-scrollbar)滚动条
 - [detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize)监听元素的变化,如高度
+
+-[isMobile](https://github.com/kaimallea/isMobile)
 
 - [Picturefill](https://github.com/scottjehl/picturefill)图片自适应
 
