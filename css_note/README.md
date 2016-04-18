@@ -104,25 +104,3 @@ body {
   line-height: 1.42858;
 }
 ```
-
-
-#### 小图标文字对齐的解决方案
-```css
-/* http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px */
-.icon {
-  display: inline-block;
-  width:20px;
-  height:20px;
-  background: url(delete.png) no-repeat center;
-  white-space:nowrap;
-  letter-spacing: -1em;
-  text-indent: -99em;
-  color: transparent;
-  /* IE7 */
-  *text-indent: 0;
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '\3000');
-}
-.icon:before {
-  content: '\3000';
-}
-```
