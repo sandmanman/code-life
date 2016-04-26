@@ -246,11 +246,23 @@ console.log(data2.delrep(function(d) {return d.name;}));
 ```
 
 
-####:hover伪类在移动端二次点击的问题
+#### 验证码 倒计时60秒
 ```javascript
-// 在PC端中,默认链接颜色是红色， hover的时候，链接颜色是蓝色，点击一次跳转
-// 但是在移动端上中，第一次点击，链接颜色变蓝（也就是移动端上点击会触发伪类效果），再点一次才会跳转
+var time = 60;
+function countDown(which){
 
-// 在body上绑定一个空的touchstart事件即可
-document.body.addEventListener(‘touchstart’, function(){ });
+  if(time == 0 ){
+    $(which).text("重新获取");
+    $(which).removeAttribute("disabled");
+    time = 60;
+  }else {
+    $(which).text("等待"+time+"秒");
+    $(which).attr("disabled",true);
+    time--;
+    setTimeout(function(){
+      countDown(which)
+    },
+    1000)
+  }
+}
 ```
