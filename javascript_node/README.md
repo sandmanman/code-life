@@ -1,16 +1,5 @@
 #javaScript Note
 
-####HTTP状态码
-100-199 用于指定客户端应相应的某些动作。
-
-200-299 用于表示请求成功。
-
-300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。
-
-400-499 用于指出客户端的错误。400    1、语义有误，当前请求无法被服务器理解。401    当前请求需要用户验证 403    服务器已经理解请求，但是拒绝执行它。
-
-500-599 用于支持服务器错误。 503 – 服务不可用
-
 ####前辈总结规则
 ```javascript
 不要使用new Number()、new Boolean()、new String()创建包装对象；
@@ -41,44 +30,6 @@ var isMobile = ua.indexOf('mobile')!=-1;
 var mac = ua.indexOf('mac os x')!=-1
 ```
 
-####移动端浏览器判断Demo
-```javascript
-var isIDevicePhone = (/iphone|ipod/gi).test(navigator.platform);
-var isIDeviceIpad = !isIDevicePhone && (/ipad/gi).test(navigator.platform);
-var isIDevice = isIDevicePhone || isIDeviceIpad;
-var isAndroid = !isIDevice && (/android/gi).test(navigator.userAgent);
-var isIEMobile = !isIDevice && !isAndroid && (/IEMobile/gi).test(navigator.userAgent);
-var redirect = function() {
-	if (isIDevice) {
-		var msg = isIDeviceIpad ? "检测到您正在使用iPad, 是否直接前往AppStore下载?" : "检测到您正在使用iPhone, 是否直接前往AppStore下载?";
-		if (confirm(msg)) {
-			window.location = "http://3g.163.com/links/3615";
-			return;
-		};
-		//if the device is ipad, break redirect.
-		if (isIDeviceIpad) {
-			return;
-		}
-	} else if (isAndroid) {
-		if (confirm("检测到您正在使用Android 手机，是否直接下载程序安装包？")) {
-			window.location = 'http://3g.163.com/links/4304';
-			return;
-		}
-		//TODO if the device is android pad, break redirect
-		//
-	} else if (isIEMobile) {
-		//continue
-		window.location = 'http://3g.163.com/links/3614';
-		return;
-	} else {
-		//break
-		return;
-	}
-	window.location = 'http://3g.163.com/newsapp';
-};
-//调用
-redirect();
-```
 
 ####移动端浏览器判断
 ```javascript
@@ -265,4 +216,39 @@ function countDown(which){
     1000)
   }
 }
+```
+
+
+#### 字符串剪裁
+```javascript
+/**
+ * 在拼接正则表达式字符串时，消除原字符串中特殊字符对正则表达式的干扰
+ * @author:meizz
+ * @version: 2010/12/16
+ * @param               {String}        str     被正则表达式字符串保护编码的字符串
+ * @return              {String}                被保护处理过后的字符串
+*/
+function escapeReg(str) {
+        return str.replace(new RegExp("([.*+?^=!:\x24{}()|[\\]\/\\\\])", "g"), "\\\x241");
+}  
+
+/**
+ * 删除URL字符串中指定的 Query
+ * @author:meizz
+ * @version:2010/12/16
+ * @param               {String}        url     URL字符串
+ * @param               {String}        key     被删除的Query名
+ * @return              {String}                被删除指定 query 后的URL字符串
+*/
+
+function delUrlQuery(url, key) {
+        key = escapeReg(key);
+        var reg = new RegExp("((\\?)("+ key +"=[^&]*&)+(?!"+ key +
+  "=))|(((\\?|&)"+ key +"=[^&]*)+$)|(&"+ key +"=[^&]*)", "g");
+        return url.replace(reg, "\x241")
+}  
+
+// 应用实例
+var str = "http://www.xxx.com/?pn=0";   // 删除指定字符 pn=0
+delUrlQuery(str, "pn");
 ```
