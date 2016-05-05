@@ -98,6 +98,7 @@ Code Life
 - [Flickity](https://github.com/metafizzy/flickity)
 - [Owl Carousel](https://github.com/smashingboxes/OwlCarousel2)
 - [Swiper](https://github.com/nolimits4web/Swiper)
+- [slick](https://github.com/kenwheeler/slick/)
 
 
 - [circle statitic](https://github.com/pguso/jquery-plugin-circliful)环形进度条
