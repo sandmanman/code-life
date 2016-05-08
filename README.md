@@ -104,8 +104,9 @@ Code Life
 - [circle statitic](https://github.com/pguso/jquery-plugin-circliful)环形进度条
 - [perfect scrollbar](https://github.com/noraesae/perfect-scrollbar)滚动条
 - [detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize)监听元素的变化,如高度
+- [StickyTableHeaders](https://github.com/jmosbech/StickyTableHeaders)table header滚动固定顶部
 
--[isMobile](https://github.com/kaimallea/isMobile)
+- [isMobile](https://github.com/kaimallea/isMobile)
 
 - [Picturefill](https://github.com/scottjehl/picturefill)图片自适应
 
