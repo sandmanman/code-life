@@ -31,7 +31,7 @@ Code Life
 
 ===
 
-### javaScript
+### JavaScript
 - [Sea.js](http://island205.github.io/HelloSea.js/index.html)
 - [VUE.JS](http://cn.vuejs.org/)
 
@@ -41,9 +41,11 @@ Code Life
 ===
 
 #### 框架库
-- <a href="http://www.foundcss.com/">Foundation</a>
-- <a href="http://getuikit.com/">UI KIT</a>
-- <a href="https://github.com/aralejs/aralejs.org/">aralejs</a>
+- [Bootstrap](http://getbootstrap.com/)
+- [UI KIT](http://getuikit.com/)
+- [aralejs](https://github.com/aralejs/aralejs.org/)
+
+- [vue strap](https://github.com/yuche/vue-strap)Vue.js + Bootstrap
 
 ===
 
@@ -56,8 +58,9 @@ Code Life
 - [Frozen UI](http://frozenui.github.io/)
 - [GMU](https://github.com/fex-team/GMU)
 - [SUI-Mobile](https://github.com/sdc-alibaba/SUI-Mobile)
+- [WEUI](https://github.com/weui/weui)
 
-- [vux](https://github.com/airyland/vux) vue weui
+- [vux](https://github.com/airyland/vux)vue + weui
 
 - [lib-flexible移动端自适应方案(rem)](https://github.com/amfe/lib-flexible)
 - [移动前端开发经验指南](https://github.com/doyoe/trip)
@@ -91,7 +94,7 @@ Code Life
 
 ===
 
-#### javaScript资源
+#### JavaScript(jQuery)插件
 
 **自适应轮播**
 - [Glide](https://github.com/jedrzejchalubek/Glide.js)
