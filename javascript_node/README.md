@@ -1,4 +1,4 @@
-#javaScript Note
+#JavaScript Note
 
 ####前辈总结规则
 ```javascript
