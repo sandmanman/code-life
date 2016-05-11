@@ -80,17 +80,18 @@ Code Life
 - <a href="http://css3generator.com/">CSS3 Generator</a>
 - <a href="http://westciv.com/tools/gradients/">CSS3 Tool</a>
 - <a href="http://cssanimate.com/">CSS3 Keyframes Animation Generator</a>
-- <a href="http://matthewlein.com/ceaser/">Ceaser -  CSS Easing Animation Tool -  Matthew Lein</a>
+- <a href="http://matthewlein.com/ceaser/">Ceaser -  CSS Easing Animation Tool</a>
 - <a href="https://jeremyckahn.github.io/stylie/">Stylie</a>
 - <a href="http://labs.pufen.net/my_collection/hex_change.html">CSS背景颜色属性值转换 v3</a>
 
 ===
 
 #### 有用的
-- <a href="https://github.com/leeethe/fex- edu">FEX学院</a>
-- <a href="http://f2er.club/">醉牛前端</a>
-- <a href="http://fredsarmento.me/frontend- tools/">frontend- tools</a>
-- <a href="http://alloyteam.github.io/AlloyDesigner/">AlloyDesigner</a> 对比设计图
+- [FEX学院](https://github.com/leeethe/fex-edu)
+- [醉牛前端](http://f2er.club/)
+- [frontend-tools](http://fredsarmento.me/frontend-tools/)
+- [AlloyDesigner](http://alloyteam.github.io/AlloyDesigner/)对比设计图
+- [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)详细的favicon
 
 ===
 
