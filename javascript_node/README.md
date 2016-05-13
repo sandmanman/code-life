@@ -252,3 +252,12 @@ function delUrlQuery(url, key) {
 var str = "http://www.xxx.com/?pn=0";   // 删除指定字符 pn=0
 delUrlQuery(str, "pn");
 ```
+
+
+#### 判断浏览器向上/下滚动
+```javascript
+var topf = 0;
+window.onscroll = function() {
+	tops = document.documentElement.scrollTop || document.body.scrollTop < topf ? alert("页面正在向上滚") : topf = document.documentElement.scrollTop || document.body.scrollTop;
+}
+```
