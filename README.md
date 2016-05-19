@@ -95,6 +95,26 @@ Code Life
 
 ===
 
+
+#### JavaScript库
+- [dynamics.js](https://github.com/michaelvillar/dynamics.js)JavaScript动画库
+- [mathjs](https://github.com/josdejong/mathjs)数学运算
+- [Moment.js](http://momentjs.cn/)时间处理
+- [is.js](http://is.js.org/)迷你检查库，这个几乎涵盖了全部的各种检测
+- [device.js](http://matthewhudson.me/projects/device.js/)检测用户设备
+- [Keypress](http://dmauro.github.io/Keypress/)键位码
+- [Move.js](http://visionmedia.github.io/move.js/)css3动画操作简单
+- [store.js](https://github.com/marcuswestin/store.js)localStore兼容搞定
+- [cookie.js](https://github.com/florian/cookie.js)
+- [favico.js](https://github.com/ejci/favico.js)在favico上添加数字
+- [modernizr](https://modernizr.com/)检测浏览器CSS3/HTML5的支持情况
+- [es5-shim](https://github.com/es-shims/es5-shim)解决使用ES5的兼容问题
+- [es6-promise](https://github.com/stefanpenner/es6-promise)解决ES6 Promise兼容问题
+
+
+- [microjs](http://microjs.com/)收集小而精悍的JS库
+
+
 #### JavaScript(jQuery)插件
 
 **自适应轮播**
@@ -104,6 +124,9 @@ Code Life
 - [Swiper](https://github.com/nolimits4web/Swiper)
 - [slick](https://github.com/kenwheeler/slick/)
 
+- [notie](https://github.com/jaredreich/notie)原生提示插件
+
+- [parallax](https://github.com/wagerfield/parallax)视差滚动如3D般
 
 - [circle statitic](https://github.com/pguso/jquery-plugin-circliful)环形进度条
 - [perfect scrollbar](https://github.com/noraesae/perfect-scrollbar)滚动条
@@ -112,7 +135,9 @@ Code Life
 
 - [isMobile](https://github.com/kaimallea/isMobile)
 
-- [Picturefill](https://github.com/scottjehl/picturefill)图片自适应
+- [Picturefill](https://github.com/scottjehl/picturefill)根据不同的设备显示不同的图片
+
+- [share.js](https://github.com/overtrue/share.js)
 
 - [资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
 
