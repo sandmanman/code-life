@@ -111,6 +111,8 @@ Code Life
 - [es5-shim](https://github.com/es-shims/es5-shim)解决使用ES5的兼容问题
 - [es6-promise](https://github.com/stefanpenner/es6-promise)解决ES6 Promise兼容问题
 
+- [Mock.js](http://mockjs.com/)模拟数据
+
 
 - [microjs](http://microjs.com/)收集小而精悍的JS库
 
