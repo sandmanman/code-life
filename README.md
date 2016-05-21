@@ -134,6 +134,9 @@ Code Life
 - [perfect scrollbar](https://github.com/noraesae/perfect-scrollbar)滚动条
 - [detect-element-resize](https://github.com/sdecima/javascript-detect-element-resize)监听元素的变化,如高度
 - [StickyTableHeaders](https://github.com/jmosbech/StickyTableHeaders)table header滚动固定顶部
+- [Progress](http://usablica.github.io/progress.js/)进度条
+- [dropzone](http://www.dropzonejs.com/)拖拽文件上传
+- [select](https://github.com/HubSpot/select)原生JS Select
 
 - [isMobile](https://github.com/kaimallea/isMobile)
 
