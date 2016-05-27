@@ -159,6 +159,9 @@ Code Life
   - vue.js
   - angular.js
   - regular.js
+- routing 路由
+  - page.js
+  - staeman 深层路由
 - lib JS库
   - hammer.js 手势
   - velocity.js 高级动画
