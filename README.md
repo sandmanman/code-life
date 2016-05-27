@@ -147,6 +147,24 @@ Code Life
 - [资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)
 
 
+#### 前端开发技术选型
+- DOM
+  - jQuery DOM操作
+- Communiction 通信
+  - AJAX
+  - socket.io
+- Utility 工具类
+  - underscore.js 函数增强
+- Template
+  - vue.js
+  - angular.js
+  - regular.js
+- lib JS库
+  - hammer.js 手势
+  - velocity.js 高级动画
+  - video.js 视频
+
+
 #### Status codes
 The API is designed to return different status codes according to context and action. In this way if a request results in an error the caller is able to get insight into what went wrong, e.g. status code 400 Bad Request is returned if a required attribute is missing from the request. The following list gives an overview of how the API functions generally behave.
 
