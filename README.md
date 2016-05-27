@@ -2,6 +2,7 @@ Code Life
 ===
 #### 项目规范
 - [CodeGuide](http://alloyteam.github.io/CodeGuide/)
+- [Front-End Coding Guidelines](http://guide.aotu.io/index.html)
 
 ===
 
