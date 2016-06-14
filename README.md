@@ -75,15 +75,15 @@ Code Life
 - [动画库](http://h5bp.github.io/Effeckt.css/)
 
 #### CSS在线工具
-- <a href="http://linxz.github.io/tianyizone/">CSS小工具集合</a>
-- <a href="http://www.cnblogs.com/lhb25/archive/2012/09/27/10-css3-online-generator-tools.html">CSS3 Maker</a>
-- <a href="http://border- radius.com/">Border Radius</a>
-- <a href="http://css3generator.com/">CSS3 Generator</a>
-- <a href="http://westciv.com/tools/gradients/">CSS3 Tool</a>
-- <a href="http://cssanimate.com/">CSS3 Keyframes Animation Generator</a>
-- <a href="http://matthewlein.com/ceaser/">Ceaser -  CSS Easing Animation Tool</a>
-- <a href="https://jeremyckahn.github.io/stylie/">Stylie</a>
-- <a href="http://labs.pufen.net/my_collection/hex_change.html">CSS背景颜色属性值转换 v3</a>
+- [CSS小工具集合](http://linxz.github.io/tianyizone/)
+- [CSS3 Maker](http://www.cnblogs.com/lhb25/archive/2012/09/27/10-css3-online-generator-tools.html)
+- [Border Radius](http://border- radius.com/)
+- [CSS3 Generator](http://css3generator.com/)
+- [CSS3 Tool](http://westciv.com/tools/gradients/)
+- [CSS3 Keyframes Animation Generator](http://cssanimate.com/)
+- [CSS Easing Animation Tool](http://matthewlein.com/ceaser/)
+- [Stylie](https://jeremyckahn.github.io/stylie/)
+- [CSS背景颜色属性值转换 v3](http://labs.pufen.net/my_collection/hex_change.html)
 
 ===
 
@@ -92,7 +92,7 @@ Code Life
 - [醉牛前端](http://f2er.club/)
 - [frontend-tools](http://fredsarmento.me/frontend-tools/)
 - [AlloyDesigner](http://alloyteam.github.io/AlloyDesigner/)对比设计图
-- [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)详细的favicon
+- [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)详细的favicon使用
 
 ===
 
@@ -192,3 +192,5 @@ Return values:
 - **405 Method Not Allowed** - The request is not supported
 - **409 Conflict** - A conflicting resource already exists, e.g. creating a project with a name that already exists
 - **500 Server Error** - While handling the request something went wrong on the server side
+
+
