@@ -104,6 +104,7 @@ Code Life
 - [is.js](http://is.js.org/)迷你检查库，这个几乎涵盖了全部的各种检测
 - [device.js](http://matthewhudson.me/projects/device.js/)检测用户设备
 - [Keypress](http://dmauro.github.io/Keypress/)键位码
+- [keymaster](https://github.com/madrobby/keymaster)
 - [Move.js](http://visionmedia.github.io/move.js/)css3动画操作简单
 - [store.js](https://github.com/marcuswestin/store.js)localStore兼容搞定
 - [cookie.js](https://github.com/florian/cookie.js)
@@ -192,5 +193,3 @@ Return values:
 - **405 Method Not Allowed** - The request is not supported
 - **409 Conflict** - A conflicting resource already exists, e.g. creating a project with a name that already exists
 - **500 Server Error** - While handling the request something went wrong on the server side
-
-
