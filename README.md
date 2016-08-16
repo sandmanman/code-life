@@ -103,12 +103,16 @@ Code Life
 - [Moment.js](http://momentjs.cn/)时间处理
 - [is.js](http://is.js.org/)迷你检查库，这个几乎涵盖了全部的各种检测
 - [device.js](http://matthewhudson.me/projects/device.js/)检测用户设备
+- [bowser](https://github.com/ded/bowser)浏览器检测
 - [Keypress](http://dmauro.github.io/Keypress/)键位码
 - [keymaster](https://github.com/madrobby/keymaster)
 - [Move.js](http://visionmedia.github.io/move.js/)css3动画操作简单
 - [store.js](https://github.com/marcuswestin/store.js)localStore兼容搞定
 - [cookie.js](https://github.com/florian/cookie.js)
 - [favico.js](https://github.com/ejci/favico.js)在favico上添加数字
+- [filesize.js](https://github.com/avoidwork/filesize.js)文件大小格式化
+- [classnames](https://github.com/JedWatson/classnames)className 拼接
+- [Reqwest](https://github.com/ded/)Ajax请求
 - [modernizr](https://modernizr.com/)检测浏览器CSS3/HTML5的支持情况
 - [es5-shim](https://github.com/es-shims/es5-shim)解决使用ES5的兼容问题
 - [es6-promise](https://github.com/stefanpenner/es6-promise)解决ES6 Promise兼容问题
