@@ -28,13 +28,14 @@
 	// 为了避免和原型对象Plugin.prototype的冲突，这地方采用继承原型对象的方法
 	$.extend(Plugin.prototype, {
 	    init: function () {
-	                // 初始化，由于继承自Plugin原型，
-	                // 你可以在这里直接使用this.element或者this.settings
+	            // 初始化，由于继承自Plugin原型，
+	            // 你可以在这里直接使用this.element或者this.settings
 	            console.log("xD");
+	            this.yourOtherFunction( "jQuery Plugin Boilerplate" );
 	    },
-	    yourOtherFunction: function () {
-	            // some logic
-	    }
+	    yourOtherFunction: function(text) {
+                console.log(text);
+            }
 	});
 
 	// 对构造函数的一个轻量级封装，
