@@ -22,6 +22,7 @@ Code Life
 - [CSS森林](http://blog.cssforest.org/)
 - [前端观察](https://www.qianduan.net/)
 - [W3Cplus](http://www.w3cplus.com/)
+- [梁少峰的个人博客](https://github.com/youngwind/blog)
 
 ===
 
