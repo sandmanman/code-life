@@ -261,3 +261,56 @@ window.onscroll = function() {
 	tops = document.documentElement.scrollTop || document.body.scrollTop < topf ? alert("页面正在向上滚") : topf = document.documentElement.scrollTop || document.body.scrollTop;
 }
 ```
+
+------------------------------
+
+#### 循环中的闭包
+来源[javascript秘密花园](http://bonsaiden.github.io/JavaScript-Garden/zh/#function.closures)
+
+一个常见的错误出现在循环中使用闭包，假设我们需要在每次循环中调用循环序号。
+
+```javascript
+for(var i = 0; i < 10; i++) {
+    setTimeout(function() {
+        console.log(i);  
+    }, 1000);
+}
+```
+
+上面的代码不会输出数字 `0` 到 `9`，而是会输出数字 `10` 十次。
+
+当 `console.log` 被调用的时候，匿名函数保持对外部变量 `i` 的引用，此时 for循环已经结束， `i` 的值被修改成了 `10`。
+
+为了得到想要的结果，需要在每次循环中创建变量 i 的拷贝。
+
+**避免引用错误**
+
+为了正确的获得循环序号，最好使用 匿名包装器（译者注：其实就是我们通常说的自执行匿名函数）。
+
+```javascript
+for(var i = 0; i < 10; i++) {
+    (function(e) {
+        setTimeout(function() {
+            console.log(e);  
+        }, 1000);
+    })(i);
+}
+```
+
+外部的匿名函数会立即执行，并把 `i` 作为它的参数，此时函数内 `e` 变量就拥有了 `i` 的一个拷贝。
+
+当传递给 `setTimeout` 的匿名函数执行时，它就拥有了对 `e` 的引用，而这个值是不会被循环改变的。
+
+有另一个方法完成同样的工作，那就是从匿名包装器中返回一个函数。这和上面的代码效果一样。
+
+```javascript
+for(var i = 0; i < 10; i++) {
+    setTimeout((function(e) {
+        return function() {
+            console.log(e);
+        }
+    })(i), 1000)
+}
+```
+
+---------------------------------
